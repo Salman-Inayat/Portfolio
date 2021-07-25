@@ -36,6 +36,11 @@ function Sidebar(props) {
       icon: <PeopleIcon />,
     },
     {
+        title: "Experience ",
+        href: "/Experience",
+        icon: <PeopleIcon />,
+      },
+    {
       title: "Testimonials",
       href: "/Testimonials",
       icon: <ShoppingBasketIcon />,

@@ -1,10 +1,26 @@
 import React from 'react'
+import {Grid} from "@material-ui/core"
+
 
 const Projects = () => {
     return (
-        <div>
-            <h1>Project </h1>
-        </div>
+        <Grid container spacing={3}>
+            <Grid item md={6} sm={12}>
+                <div>
+                    <h1>Hello</h1>
+                </div>
+            </Grid>
+            <Grid item md={6} sm={12}>
+                <div>
+                    <h1>Hello</h1>
+                </div>
+            </Grid>
+            <Grid item md={6} sm={12}>
+                <div>
+                    <h1>Hello</h1>
+                </div>
+            </Grid>
+        </Grid>
     )
 }
 
