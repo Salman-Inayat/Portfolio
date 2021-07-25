@@ -1,0 +1,12 @@
+.sidebar{
+    padding: 20px 30px;
+    background-color: blueviolet;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar_list{
+    width: 250px;
+}
