@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "clsx";
-import { Grid } from "@material-ui/core";
+import { Grid, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -13,6 +13,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -38,9 +39,9 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   grid_container: {
     padding: "30px",
   },
-grid:{
-    margin:'10px'
-},
+  grid: {
+    margin: "30px",
+  },
   media: {
     width: "88%",
     marginLeft: "auto",
@@ -52,9 +53,9 @@ grid:{
     backgroundColor: "#fff",
     position: "relative",
     [breakpoints.up("md")]: {
-      width: "100%",
-      marginLeft: spacing(-3),
-      marginTop: 0,
+      width: "90%",
+      marginLeft: spacing(3),
+      marginTop: spacing(-6),
       transform: "translateX(-8px)",
     },
     "&:after": {
@@ -76,6 +77,17 @@ grid:{
     marginTop: 24,
     textTransform: "initial",
   },
+  button: {
+    margin: spacing(1),
+  },
+  tech_images:{
+    width:'48px',
+    height:'48px',
+    margin:'0px 5px'
+  },
+  github_img:{
+      height:'50px'
+  }
 }));
 
 const Projects = () => {
@@ -95,14 +107,32 @@ const Projects = () => {
   ];
 
   const data = [
-    { id: 1, name: "/POS.png", title: "Point of Sales", techs: ["PHP.png", "Node.png", "GIT.png"]},
-    { id: 2, name: "/MySQL.png", title: "Demo App", techs: ["PHP.png", "Node.png", "GIT.png"]},
-    { id: 3, name: "/JS.png", title: "Jehangiri", techs: ["PHP.png", "Node.png", "GIT.png"]},
+    {
+      id: 1,
+      name: "/POS.png",
+      title: "Point of Sales",
+      techs: ["/PHP.png", "/MySQL.png"],
+      github:"https://github.com/Salman-Inayat/Point-Of-Sales"
+    },
+    {
+      id: 2,
+      name: "/MySQL.png",
+      title: "Demo App",
+      techs: ["/nodejs.png", "/HTML.png", "GIT.png", "GraphQL.png", "mongodb.png"],
+      github:"https://www.github.com"
+    },
+    {
+      id: 3,
+      name: "/JS.png",
+      title: "Jehangiri",
+      techs: ["/JS.png", "/CSS.png"],
+      github:"https://www.github.com"
+    },
   ];
 
   const styles = useStyles();
-    const { button: buttonStyles, ...contentStyles } =
-      useBlogTextInfoContentStyles();
+  const { button: buttonStyles, ...contentStyles } =
+    useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
 
   return (
@@ -129,8 +159,8 @@ const Projects = () => {
     // </Grid>
 
     <Grid container className={styles.grid_container}>
-      {data.map((user) => (
-        <Grid item md={6} className={styles.grid}>
+      {data.map((user, i) => (
+        <Grid item md={5} className={styles.grid}>
           <Card className={cx(styles.root, shadowStyles.root)}>
             <CardActionArea>
               <CardMedia
@@ -138,19 +168,40 @@ const Projects = () => {
                 image={user.name}
                 title="Contemplative Reptile"
               />
-              <CardContent>
-                <TextInfoContent
-                  useStyles={useBlogTextInfoContentStyles}
-                  classes={contentStyles}
-                    overline={"28 MAR 2019"}
-                  heading={user.title}
-                  body={"Technologies Used"}
-                />
-                {user.techs.map((p) => {
-                  <img src={p} alt="techs"></img>;
-                  {console.log(p)}
-                })}
-              </CardContent>
+              <Grid container spacing={3}>
+                <Grid item md={5}>
+                  <CardContent>
+                    <TextInfoContent
+                      useStyles={useBlogTextInfoContentStyles}
+                      classes={contentStyles}
+                      overline={"Full Stack"}
+                      heading={user.title}
+                      // body={"Technologies Used"}
+                    />
+                    {/* <Button
+                      variant="contained"
+                      color="secondary"
+                      className={styles.button}s
+                      startIcon={<GitHubIcon />}
+                    >
+                      GitHub
+                    </Button> */}
+                    <Link href={user.github}><img src="Github.png" className={styles.github_img} /></Link>
+                  </CardContent>
+                </Grid>
+                <Grid item md={7}>
+                <CardContent>
+                  <Typography gutterBottom variant="body2" component="p">
+                    Technologies Used
+                  </Typography>
+                  {
+                      user.techs.map((el, j) => (
+                        <img className={styles.tech_images} key={j} src={el} />
+                      ))
+                  }
+                  </CardContent>
+                </Grid>
+              </Grid>
             </CardActionArea>
           </Card>
         </Grid>

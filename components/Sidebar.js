@@ -64,19 +64,11 @@ function Sidebar(props) {
                     {page.icon}
                 </ListItemIcon>
                 <ListItemText primary={page.title} />
-                {/* <Button>
-                  <div>{page.icon}</div>
-                  {page.title}
-                </Button> */}
                 </ Button>
               </Link>
             </ListItem>
           ))}
         </List>
-        <Grid item>
-        <button>Hi</button>
-
-        </Grid>
       </Grid>
     </div>
   );
