@@ -1,5 +1,12 @@
 import React from "react";
-import { List, ListItem, Button, Grid, ListItemIcon, ListItemText } from "@material-ui/core";
+import {
+  List,
+  ListItem,
+  Button,
+  Grid,
+  ListItemIcon,
+  ListItemText,
+} from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -10,8 +17,6 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import SidebarStyle from "../styles/Sidebar.module.css";
 import Link from "next/link";
-
-
 
 function Sidebar(props) {
   const pages = [
@@ -36,10 +41,10 @@ function Sidebar(props) {
       icon: <PeopleIcon />,
     },
     {
-        title: "Experience ",
-        href: "/Experience",
-        icon: <PeopleIcon />,
-      },
+      title: "Experience ",
+      href: "/Experience",
+      icon: <PeopleIcon />,
+    },
     {
       title: "Testimonials",
       href: "/Testimonials",
@@ -54,25 +59,24 @@ function Sidebar(props) {
 
   return (
     <div className={SidebarStyle.sidebar}>
-      <Grid item md={3}>
-        <List component="nav" aria-label="main mailbox folders" className={SidebarStyle.sidebar_list}>
-          {pages.map((page) => (
+      <List
+        component="nav"
+        aria-label="main mailbox folders"
+        className={SidebarStyle.sidebar_list}
+      >
+        {pages.map((page) => (
+          <Link href={page.href}>
             <ListItem key={page.title} button>
-              <Link href={page.href}>
-                <Button>
-                <ListItemIcon>
-                    {page.icon}
-                </ListItemIcon>
+              <Button>
+                <ListItemIcon>{page.icon}</ListItemIcon>
                 <ListItemText primary={page.title} />
-                </ Button>
-              </Link>
+              </Button>
             </ListItem>
-          ))}
-        </List>
-      </Grid>
+          </Link>
+        ))}
+      </List>
     </div>
   );
 }
-
 
 export default Sidebar;
