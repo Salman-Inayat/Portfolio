@@ -196,7 +196,7 @@ export default function DemoSidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <Image src="/salman_inayat.png" alt="logo" />
+          <Image src="/salman_inayat.png" width={200} height={70} alt="logo" />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -223,8 +223,8 @@ export default function DemoSidebar() {
           //   className={SidebarStyle.sidebar_list}
         >
           {pages.map((page, i) => (
-            <Link href={page.href}>
-              <ListItem key={page.title} button key={page.title}>
+            <Link href={page.href} key={i}>
+              <ListItem key={page.title} button>
                 <Button>
                   <ListItemIcon>{page.icon}</ListItemIcon>
                   <ListItemText primary={page.title} />

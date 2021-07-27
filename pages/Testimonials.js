@@ -32,7 +32,7 @@ const Testimonials = () => {
     return testimonials.map((testimonial, i) => {
       return (
         <Grid item md={4} key={i}>
-          <img src="left-quote.png"></img>
+          <Image src="left-quote.png" height={100} width={100} />
           <p className={styles.content}>{testimonial.content}</p>
           <div className={styles.user_area}>
             <Grid item md={3}>

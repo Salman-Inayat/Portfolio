@@ -40,9 +40,9 @@ const Projects = () => {
       techs: [
         "/nodejs.png",
         "/HTML.png",
-        "GIT.png",
-        "GraphQL.png",
-        "mongodb.png",
+        "/GIT.png",
+        "/GraphQL.png",
+        "/mongodb.png",
       ],
       github: "https://www.github.com",
     },
@@ -60,9 +60,9 @@ const Projects = () => {
       techs: [
         "/nodejs.png",
         "/HTML.png",
-        "GIT.png",
-        "GraphQL.png",
-        "mongodb.png",
+        "/GIT.png",
+        "/GraphQL.png",
+        "/mongodb.png",
       ],
       github: "https://www.github.com",
     },
@@ -73,9 +73,9 @@ const Projects = () => {
       techs: [
         "/nodejs.png",
         "/HTML.png",
-        "GIT.png",
-        "GraphQL.png",
-        "mongodb.png",
+        "/GIT.png",
+        "/GraphQL.png",
+        "/mongodb.png",
       ],
       github: "https://www.github.com",
     },
@@ -86,9 +86,9 @@ const Projects = () => {
       techs: [
         "/nodejs.png",
         "/HTML.png",
-        "GIT.png",
-        "GraphQL.png",
-        "mongodb.png",
+        "/GIT.png",
+        "/GraphQL.png",
+        "/mongodb.png",
       ],
       github: "https://www.github.com",
     },
@@ -99,9 +99,9 @@ const Projects = () => {
       techs: [
         "/nodejs.png",
         "/HTML.png",
-        "GIT.png",
-        "GraphQL.png",
-        "mongodb.png",
+        "/GIT.png",
+        "/GraphQL.png",
+        "/mongodb.png",
       ],
       github: "https://www.github.com",
     },
@@ -114,7 +114,13 @@ const Projects = () => {
       {data.map((user, i) => (
         <Grid item md={12} className={local_styles.individualGrid} key={i}>
           <Grid item md={5} sm={12}>
-            <Image src={user.name} alt="" className={Styles.pimage} />
+            <Image
+              src={user.name}
+              alt=""
+              width={450}
+              height={300}
+              className={Styles.pimage}
+            />
           </Grid>
           <Grid item md={1} xs={12}></Grid>
           <Grid item md={5} xs={12}>
@@ -136,7 +142,13 @@ const Projects = () => {
               </Link>
               <br></br>
               {user.techs.map((el, j) => (
-                <Image className={Styles.tech_images} key={j} src={el} />
+                <Image
+                  className={Styles.tech_images}
+                  width={40}
+                  height={40}
+                  key={j}
+                  src={el}
+                />
               ))}
             </div>
           </Grid>
