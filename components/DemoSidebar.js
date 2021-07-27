@@ -37,7 +37,8 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import fileSaver from "file-saver";
 
-const drawerWidth = "25%";
+const drawerWidth = 300;
+const appbarheight = 70;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -54,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
-    marginBottom: "50px",
     position: "fixed",
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     position: "fixed",
     whiteSpace: "nowrap",
-    width: "25%",
+    width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -196,27 +196,7 @@ export default function DemoSidebar() {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.title}
-          >
-            Salman Inayat
-          </Typography> */}
           <img src="/salman_inayat.png" alt="logo"></img>
-          {/* <IconButton color="inherit"> */}
-          <Button
-            //   className={navStyles.button}
-            variant="outlined"
-            // color="primary"
-            onClick={saveFile}
-            style={{ float: "right" }}
-          >
-            Resume
-          </Button>
-          {/* </IconButton> */}
         </Toolbar>
       </AppBar>
       <Drawer
