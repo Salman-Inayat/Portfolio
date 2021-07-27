@@ -10,6 +10,7 @@ const PostContactForm = async (values, successCallback, errorCallback) => {
 const initialFormValues = {
   fullName: "",
   email: "",
+  subject: "",
   message: "",
   formSubmitted: false,
   success: false,
@@ -17,7 +18,7 @@ const initialFormValues = {
 
 export const useFormControls = () => {
   const [values, setValues] = useState(initialFormValues);
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
 
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
@@ -32,6 +33,10 @@ export const useFormControls = () => {
           ? ""
           : "Email is not valid.";
     }
+
+    if ("subject" in fieldValues)
+      temp.subject =
+        fieldValues.subject.length !== 0 ? "" : "This field is required.";
 
     if ("message" in fieldValues)
       temp.message =
@@ -71,6 +76,7 @@ export const useFormControls = () => {
     const isValid =
       fieldValues.fullName &&
       fieldValues.email &&
+      fieldValues.subject &&
       fieldValues.message &&
       Object.values(errors).every((x) => x === "");
 

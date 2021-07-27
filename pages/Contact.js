@@ -17,7 +17,7 @@ const inputFieldValues = [
     id: "my-email",
   },
   {
-    name: "Subject",
+    name: "subject",
     label: "Subject",
     id: "my-subject",
   },
@@ -31,7 +31,7 @@ const inputFieldValues = [
 ];
 
 const Contact = () => {
-  const { handleInputValue, handleFormSubmit, formIsValid, errors } =
+  const { errors, handleInputValue, handleFormSubmit, formIsValid } =
     useFormControls();
 
   return (
@@ -46,15 +46,17 @@ const Contact = () => {
                   key={index}
                   onBlur={handleInputValue}
                   onChange={handleInputValue}
+                  fullWidth
                   name={inputFieldValue.name}
                   label={inputFieldValue.label}
+                  error={errors[inputFieldValue.name]}
                   multiline={inputFieldValue.multiline ?? false}
                   rows={inputFieldValue.rows ?? 1}
                   autoComplete="none"
-                  {...(errors[inputFieldValue.name] && {
-                    error: true,
-                    helperText: errors[inputFieldValue.name],
-                  })}
+                  // {...(errors[inputFieldValue.name] && {
+                  //   error: true,
+                  //   helperText: errors[inputFieldValue.name],
+                  // })}
                 />
               );
             })}
@@ -66,76 +68,6 @@ const Contact = () => {
             >
               Send Message
             </Button>
-
-            {/* <TextField fullWidth id="standard-basic" label="Name" />
-            <TextField fullWidth label="Email" />
-            <TextField fullWidth label="Subject" />
-            <TextField
-              fullWidth
-              label="Subject"
-              multiline
-              variant="outlined"
-              rows={8}
-            />
-            <Button type="submit" variant="outlined">
-              Submit
-            </Button> */}
-            {/* <input
-              name="name"
-              type="text"
-              placeholder="Name*"
-              variant="outlined"
-              // onChange={handleChange}
-              className="contact-form-input"
-              style={{ width: "100%" }}
-            />
-            <input
-              name="email"
-              placeholder="Email*"
-              type="email"
-              variant="outlined"
-              className="contact-form-input"
-              // onChange={handleChange}
-            />
-            <br />
-            <input
-              name="subject"
-              placeholder="Subject*"
-              type="text"
-              variant="outlined"
-              className="contact-form-input"
-              // onChange={handleChange}
-              style={{ width: "100%", marginTop: "0px" }}
-            />
-            <br />
-            <textarea
-              name="message"
-              variant="outlined"
-              aria-label="message"
-              placeholder="Your Message*"
-              rows={10}
-              className="message-text"
-              style={{
-                width: "100%",
-                padding: "10px",
-                borderRadius: "5px",
-                border: "1px solid #cc19ff",
-              }}
-            />
-            <br />
-            <button>
-              <a
-                style={{
-                  textDecoration: "none",
-                  color: "#800080",
-                  textAlign: "center",
-                  fontSize: "17px",
-                }}
-                href="/"
-              >
-                Contact Us
-              </a>
-            </button> */}
           </form>
         </Grid>
         <Grid item md={4} sm={12} xs={12}></Grid>
