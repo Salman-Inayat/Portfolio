@@ -1,138 +1,147 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React from "react";
+import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import styles from "../styles/Contact.module.css";
+import { useFormControls } from "../components/ContactFormControls";
 
-export default class Contact extends Component {
-  state = {
-    name: "",
-    message: "",
-    email: "",
-    subject: "",
-    sent: false,
-    buttonText: "Send Message",
-    emailError: false,
-  };
+const inputFieldValues = [
+  {
+    name: "fullName",
+    label: "Full Name",
+    id: "my-name",
+  },
+  {
+    name: "email",
+    label: "Email",
+    id: "my-email",
+  },
+  {
+    name: "Subject",
+    label: "Subject",
+    id: "my-subject",
+  },
+  {
+    name: "message",
+    label: "Message",
+    id: "my-message",
+    multiline: true,
+    rows: 8,
+  },
+];
 
-  resetForm = () => {
-    this.setState({
-      name: "",
-      message: "",
-      email: "",
-      subject: "",
-      buttonText: "Message Sent",
-    });
+const Contact = () => {
+  const { handleInputValue, handleFormSubmit, formIsValid, errors } =
+    useFormControls();
 
-    setTimeout(() => {
-      this.setState({ sent: false });
-    }, 3000);
-  };
+  return (
+    <div>
+      <Grid container>
+        <Grid item md={3} sm={12} xs={12}></Grid>
+        <Grid item md={5} sm={12} xs={12}>
+          <form className={styles.form} onSubmit={handleFormSubmit}>
+            {inputFieldValues.map((inputFieldValue, index) => {
+              return (
+                <TextField
+                  key={index}
+                  onBlur={handleInputValue}
+                  onChange={handleInputValue}
+                  name={inputFieldValue.name}
+                  label={inputFieldValue.label}
+                  multiline={inputFieldValue.multiline ?? false}
+                  rows={inputFieldValue.rows ?? 1}
+                  autoComplete="none"
+                  {...(errors[inputFieldValue.name] && {
+                    error: true,
+                    helperText: errors[inputFieldValue.name],
+                  })}
+                />
+              );
+            })}
+            <Button
+              variant="contained"
+              type="submit"
+              color="secondary"
+              disabled={!formIsValid()}
+            >
+              Send Message
+            </Button>
 
-  handleChangeEmail(e) {
-    if (
-      !e.target.value.match(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    ) {
-      this.setState({
-        email: e.target.value,
-      });
-      this.setState({ emailError: true });
+            {/* <TextField fullWidth id="standard-basic" label="Name" />
+            <TextField fullWidth label="Email" />
+            <TextField fullWidth label="Subject" />
+            <TextField
+              fullWidth
+              label="Subject"
+              multiline
+              variant="outlined"
+              rows={8}
+            />
+            <Button type="submit" variant="outlined">
+              Submit
+            </Button> */}
+            {/* <input
+              name="name"
+              type="text"
+              placeholder="Name*"
+              variant="outlined"
+              // onChange={handleChange}
+              className="contact-form-input"
+              style={{ width: "100%" }}
+            />
+            <input
+              name="email"
+              placeholder="Email*"
+              type="email"
+              variant="outlined"
+              className="contact-form-input"
+              // onChange={handleChange}
+            />
+            <br />
+            <input
+              name="subject"
+              placeholder="Subject*"
+              type="text"
+              variant="outlined"
+              className="contact-form-input"
+              // onChange={handleChange}
+              style={{ width: "100%", marginTop: "0px" }}
+            />
+            <br />
+            <textarea
+              name="message"
+              variant="outlined"
+              aria-label="message"
+              placeholder="Your Message*"
+              rows={10}
+              className="message-text"
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "1px solid #cc19ff",
+              }}
+            />
+            <br />
+            <button>
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "#800080",
+                  textAlign: "center",
+                  fontSize: "17px",
+                }}
+                href="/"
+              >
+                Contact Us
+              </a>
+            </button> */}
+          </form>
+        </Grid>
+        <Grid item md={4} sm={12} xs={12}></Grid>
+      </Grid>
+    </div>
+  );
+};
 
-      if (this.state.email === "") {
-        // check if the input is empty
-        this.setState({ emailError: false });
-      }
-    } else {
-      this.setState({ email: e.target.value, emailError: false });
-    }
-  }
-
-  formSubmit = async (e) => {
-    e.preventDefault();
-    this.setState({
-      buttonText: "...sending",
-    });
-
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message,
-      subject: this.state.subject,
-    };
-
-    try {
-      await axios.post("BACKEND_URL", data);
-      this.setState({ sent: true }, this.resetForm());
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  render() {
-    return (
-      <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
-        <TextField
-          id="standard-multiline-flexible"
-          label="Message"
-          placeholder="Enter Message"
-          variant="outlined"
-          multiline
-          rowsMax={4}
-          value={this.state.message}
-          onChange={(e) => this.setState({ message: e.target.value })}
-          required
-          type="text"
-        />
-        <br />
-        <br />
-        <br />
-
-        <TextField
-          id="outlined-basic"
-          placeholder="Enter your name"
-          label="Name"
-          variant="outlined"
-          value={this.state.name}
-          onChange={(e) => this.setState({ name: e.target.value })}
-          required
-          type="text"
-        />
-        <br />
-        <br />
-        <br />
-
-        <TextField
-          id="outlined-basic"
-          label="Email"
-          placeholder="Enter email address"
-          variant="outlined"
-          value={this.state.email}
-          onChange={(e) => this.handleChangeEmail(e)}
-          error={this.state.emailError}
-          required
-          type="email"
-        />
-        <br />
-        <br />
-        <br />
-        <TextField
-          id="outlined-basic"
-          placeholder="Enter Subject"
-          label="Subject"
-          variant="outlined"
-          value={this.state.subject}
-          onChange={(e) => this.setState({ subject: e.target.value })}
-          required
-        />
-        <br />
-        <br />
-        <br />
-        <div className="button--container">
-          <button type="submit" className="button button-primary">
-            {this.state.buttonText}
-          </button>
-        </div>
-      </form>
-    );
-  }
-}
+export default Contact;
