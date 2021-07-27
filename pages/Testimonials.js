@@ -10,21 +10,21 @@ const Testimonials = () => {
         "  Enthusiastically orchestrate premier web services whereas turnkey relationships. Competently procrastinate goal-oriented catalysts for change through resource-leveling paradigms. Assertively integrate resource sucking sources through resource maximizing channels. Seamlessly deliver virtual paradigms through web-enabled value. Progressively parallel task turnkey materials without effective leadership oriented catalysts for change through.",
       user: "Demo User",
       company: "ABC.inc",
-      image: "testimonial.webp",
+      image: "/testimonial.webp",
     },
     {
       content:
         "  Enthusiastically orchestrate premier web services whereas turnkey relationships. Competently procrastinate goal-oriented catalysts for change through resource-leveling paradigms. Assertively integrate resource sucking sources through resource maximizing channels. Seamlessly deliver virtual paradigms through web-enabled value. Progressively parallel task turnkey materials without effective leadership oriented catalysts for change through.",
       user: "Demo User",
       company: "ABC.inc",
-      image: "testimonial.webp",
+      image: "/testimonial.webp",
     },
     {
       content:
         "  Enthusiastically orchestrate premier web services whereas turnkey relationships. Competently procrastinate goal-oriented catalysts for change through resource-leveling paradigms. Assertively integrate resource sucking sources through resource maximizing channels. Seamlessly deliver virtual paradigms through web-enabled value. Progressively parallel task turnkey materials without effective leadership oriented catalysts for change through.",
       user: "Demo User",
       company: "ABC.inc",
-      image: "testimonial.webp",
+      image: "/testimonial.webp",
     },
   ];
 
@@ -32,11 +32,16 @@ const Testimonials = () => {
     return testimonials.map((testimonial, i) => {
       return (
         <Grid item md={4} key={i}>
-          <Image src="left-quote.png" height={100} width={100} />
+          <Image src="/left-quote.png" height={100} width={100} />
           <p className={styles.content}>{testimonial.content}</p>
           <div className={styles.user_area}>
             <Grid item md={3}>
-              <Image src={testimonial.image} className={styles.test_img} />
+              <Image
+                src={testimonial.image}
+                className={styles.test_img}
+                height={60}
+                width={60}
+              />
             </Grid>
             <Grid item md={7}>
               <h3 className={styles.name}>{testimonial.user}</h3>
