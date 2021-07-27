@@ -36,6 +36,7 @@ import SidebarStyle from "../styles/Sidebar.module.css";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import fileSaver from "file-saver";
+import Image from "next/image";
 
 const drawerWidth = 300;
 const useStyles = makeStyles((theme) => ({
@@ -195,7 +196,7 @@ export default function DemoSidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <img src="/salman_inayat.png" alt="logo"></img>
+          <Image src="/salman_inayat.png" alt="logo" />
         </Toolbar>
       </AppBar>
       <Drawer

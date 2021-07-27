@@ -30,9 +30,9 @@ const Skills = () => {
   ];
 
   const Skill_bars = () => {
-    return skills.map((skill) => {
+    return skills.map((skill, i) => {
       return (
-        <div className={styles.skills}>
+        <div className={styles.skills} key={i}>
           <span className={styles.name}>{skill.name}</span>
           <div className={styles.percent}>
             <div

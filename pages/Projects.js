@@ -136,7 +136,7 @@ const Projects = () => {
               </Link>
               <br></br>
               {user.techs.map((el, j) => (
-                <img className={Styles.tech_images} key={j} src={el} />
+                <Image className={Styles.tech_images} key={j} src={el} />
               ))}
             </div>
           </Grid>
