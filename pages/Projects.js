@@ -2,17 +2,9 @@ import React from "react";
 import cx from "clsx";
 import { Grid, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import TextInfoContent from "@mui-treasury/components/content/textInfo";
-import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
-import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
+import Image from "next/image";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import Styles from "../styles/Projects.module.css";
 
@@ -122,7 +114,7 @@ const Projects = () => {
       {data.map((user, i) => (
         <Grid item md={12} className={local_styles.individualGrid} key={i}>
           <Grid item md={5} sm={12}>
-            <img src={user.name} alt="" className={Styles.pimage} />
+            <Image src={user.name} alt="" className={Styles.pimage} />
           </Grid>
           <Grid item md={1} xs={12}></Grid>
           <Grid item md={5} xs={12}>

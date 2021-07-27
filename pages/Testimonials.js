@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import styles from "../styles/Testimonials.module.css";
+import Image from "next/image";
 
 const Testimonials = () => {
   const testimonials = [
@@ -28,14 +29,14 @@ const Testimonials = () => {
   ];
 
   const TestimonialsIndividual = () => {
-    return testimonials.map((testimonial) => {
+    return testimonials.map((testimonial, i) => {
       return (
-        <Grid item md={4}>
+        <Grid item md={4} key={i}>
           <img src="left-quote.png"></img>
           <p className={styles.content}>{testimonial.content}</p>
           <div className={styles.user_area}>
             <Grid item md={3}>
-              <img src={testimonial.image} className={styles.test_img}></img>
+              <Image src={testimonial.image} className={styles.test_img} />
             </Grid>
             <Grid item md={7}>
               <h3 className={styles.name}>{testimonial.user}</h3>
