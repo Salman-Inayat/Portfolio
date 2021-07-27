@@ -120,7 +120,7 @@ const Projects = () => {
   return (
     <Grid container className={Styles.grid_container}>
       {data.map((user, i) => (
-        <Grid item md={12} className={local_styles.individualGrid}>
+        <Grid item md={12} className={local_styles.individualGrid} key={i}>
           <Grid item md={5} sm={12}>
             <img src={user.name} alt="" className={Styles.pimage} />
           </Grid>
