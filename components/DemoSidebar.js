@@ -38,7 +38,6 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import fileSaver from "file-saver";
 
 const drawerWidth = 300;
-const appbarheight = 70;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -54,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    zIndex: theme.zIndex.drawer + 10000000,
     position: "fixed",
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -222,9 +221,9 @@ export default function DemoSidebar() {
           aria-label="main mailbox folders"
           //   className={SidebarStyle.sidebar_list}
         >
-          {pages.map((page) => (
+          {pages.map((page, i) => (
             <Link href={page.href}>
-              <ListItem key={page.title} button>
+              <ListItem key={page.title} button key={page.title}>
                 <Button>
                   <ListItemIcon>{page.icon}</ListItemIcon>
                   <ListItemText primary={page.title} />

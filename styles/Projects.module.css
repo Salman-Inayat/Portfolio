@@ -1,11 +1,11 @@
 .grid_container {
   padding: 30px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .pimage {
   height: 300px;
-  width: 500px;
+  width: 450px;
   transition: all 0.5s ease-in-out;
 }
 
