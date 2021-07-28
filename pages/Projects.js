@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "5em",
   },
   githubIcon: {
-    marginRight: "10px",
+    marginRight: ".2rem",
   },
   individualGrid: {
     marginTop: "30px",
@@ -122,8 +122,7 @@ const Projects = () => {
               className={Styles.pimage}
             />
           </Grid>
-          {/* <Grid item md={1} xs={12}></Grid> */}
-          <Grid item md={5} xs={12}>
+          <Grid item md={5} sm={12}>
             <div className={Styles.content}>
               <h2>{user.title}</h2>
               <p>
@@ -137,7 +136,7 @@ const Projects = () => {
                   className={local_styles.button}
                 >
                   <GitHubIcon className={local_styles.githubIcon} />
-                  View on GitHub
+                  GitHub
                 </Button>
               </Link>
               <br></br>
