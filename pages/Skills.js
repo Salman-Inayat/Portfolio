@@ -1,7 +1,33 @@
 import React from "react";
 import styles from "../styles/Skills.module.css";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    marginTop: "100px",
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  main_grid: {
+    padding: "20px 40px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
+  hidden_text: {
+    color: "rgba(0,0,0,0)",
+  },
+}));
 
 const Skills = () => {
+  const classes = useStyles();
+
   const skills = [
     {
       name: "HTML",
@@ -47,11 +73,20 @@ const Skills = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <div className={styles.container}>
-        <h1>Skills </h1>
-        <Skill_bars />
-      </div>
+    <div className={classes.root}>
+      <Grid container>
+        <Grid item xs={12} sm={12} md>
+          <Paper>xs=3</Paper>
+        </Grid>
+        <Grid item md={8} className={classes.main_grid}>
+          <div className={styles.container}>
+            <Skill_bars />
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={12} md>
+          <Paper className={classes.paper}>xs=3</Paper>{" "}
+        </Grid>
+      </Grid>
     </div>
   );
 };
