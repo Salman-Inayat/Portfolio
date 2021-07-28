@@ -30,3 +30,13 @@
   margin-bottom: 30px;
   font-size: 3rem;
 }
+
+@media screen and (max-width: 480px) {
+  .content {
+    padding: 5px;
+  }
+
+  /* .content {
+    border-bottom: 1px solid black;
+  } */
+}

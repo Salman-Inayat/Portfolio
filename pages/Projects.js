@@ -17,10 +17,17 @@ const useStyles = makeStyles((theme) => ({
     marginRight: ".2rem",
   },
   individualGrid: {
-    marginTop: "30px",
-    marginBottom: "30px",
+    margin: "30px 0px",
     display: "flex",
-    flexDirection: "row",
+
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      margin: "20px 0px",
+      borderBottom: "1px solid #b3afaf",
+    },
+  },
+  tech_images: {
+    marginRight: "10px",
   },
 }));
 
@@ -113,7 +120,7 @@ const Projects = () => {
     <Grid container className={Styles.grid_container}>
       {data.map((user, i) => (
         <Grid item md={12} className={local_styles.individualGrid} key={i}>
-          <Grid item md={6} sm={12}>
+          <Grid item xs={12} sm={8} md={6}>
             <Image
               src={user.name}
               alt=""
@@ -122,7 +129,7 @@ const Projects = () => {
               className={Styles.pimage}
             />
           </Grid>
-          <Grid item md={6} sm={12}>
+          <Grid item xs={12} sm={4} md={6}>
             <div className={Styles.content}>
               <h2>{user.title}</h2>
               <p>
@@ -141,13 +148,9 @@ const Projects = () => {
               </Link>
               <br></br>
               {user.techs.map((el, j) => (
-                <Image
-                  className={Styles.tech_images}
-                  width={40}
-                  height={40}
-                  key={j}
-                  src={el}
-                />
+                <span className={local_styles.tech_images}>
+                  <Image width={40} height={40} key={j} src={el} />
+                </span>
               ))}
             </div>
           </Grid>
