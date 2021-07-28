@@ -78,10 +78,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  drawer: {
+    flexShrink: "0",
+  },
   drawerPaper: {
     position: "fixed",
     whiteSpace: "nowrap",
     width: drawerWidth,
+    flexShrink: "0",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -89,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaperClose: {
     overflowX: "hidden",
+
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -96,6 +101,9 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9),
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -123,37 +131,32 @@ export default function DemoSidebar() {
   const pages = [
     {
       title: "Home",
-      href: "/",
+      href: "",
       icon: <DashboardIcon />,
     },
     {
-      title: "About Me",
-      href: "/AboutMe",
-      icon: <PeopleIcon />,
-    },
-    {
       title: "Skills",
-      href: "/Skills",
+      href: "Skills",
       icon: <PeopleIcon />,
     },
     {
       title: "Projects",
-      href: "/Projects",
+      href: "Projects",
       icon: <PeopleIcon />,
     },
     {
       title: "Experience ",
-      href: "/Experience",
+      href: "Experience",
       icon: <PeopleIcon />,
     },
     {
       title: "Testimonials",
-      href: "/Testimonials",
+      href: "Testimonials",
       icon: <ShoppingBasketIcon />,
     },
     {
       title: "Get In Touch",
-      href: "/Contact",
+      href: "Contact",
       icon: <ShoppingBasketIcon />,
     },
   ];
@@ -180,7 +183,7 @@ export default function DemoSidebar() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="absolute"
+        position="fixed"
         className={clsx(classes.appBar, open && classes.appBarShift)}
       >
         <Toolbar className={classes.toolbar}>
@@ -200,6 +203,7 @@ export default function DemoSidebar() {
         </Toolbar>
       </AppBar>
       <Drawer
+        className={classes.drawer}
         variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
