@@ -7,7 +7,10 @@ import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: "100px",
+    marginTop: "50px",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "50px",
+    },
   },
   paper: {
     padding: theme.spacing(2),
@@ -17,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
   main_grid: {
     padding: "20px 40px",
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      width: "100vw",
+      padding: "10px",
     },
   },
   hidden_text: {
@@ -74,7 +78,7 @@ const Skills = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container>
+      <Grid container className={classes.main_grid}>
         <Grid item xs={12} sm={12} md>
           <Paper>xs=3</Paper>
         </Grid>

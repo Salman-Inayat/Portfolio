@@ -93,4 +93,12 @@
   .container {
     width: 100%;
   }
+
+  .container .skills .name {
+    font-size: small;
+  }
+
+  .container .skills .value {
+    font-size: small;
+  }
 }
