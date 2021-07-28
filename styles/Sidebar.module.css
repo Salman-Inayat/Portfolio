@@ -1,13 +1,13 @@
-.sidebar{
-    padding: 20px 30px;
-    background-color: blueviolet;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
+.sidebar {
+  padding: 20px 30px;
+  background-color: blueviolet;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* position: fixed; */
 }
 
-.sidebar_list{
-    width: 250px;
+.sidebar_list {
+  width: 250px;
 }

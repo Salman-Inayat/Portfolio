@@ -8,43 +8,28 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
-import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import TextFieldsIcon from "@material-ui/icons/TextFields";
-import ImageIcon from "@material-ui/icons/Image";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import SettingsIcon from "@material-ui/icons/Settings";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import SidebarStyle from "../styles/Sidebar.module.css";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import fileSaver from "file-saver";
 import Image from "next/image";
+import Hidden from "@material-ui/core/Hidden";
+import PropTypes from "prop-types";
 
 const drawerWidth = 300;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-  },
-  toolbar: {
-    paddingRight: 24,
   },
   toolbarIcon: {
     display: "flex",
@@ -54,23 +39,30 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 10000000,
-    position: "fixed",
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+    // zIndex: theme.zIndex.drawer + 10000000,
+    // position: "fixed",
+    // transition: theme.transitions.create(["width", "margin"], {
+    //   easing: theme.transitions.easing.sharp,
+    //   duration: theme.transitions.duration.leavingScreen,
+    // }),
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
   },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
+  // appBarShift: {
+  //   marginLeft: drawerWidth,
+  //   width: `calc(100% - ${drawerWidth}px)`,
+  //   transition: theme.transitions.create(["width", "margin"], {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  // },
   menuButton: {
-    marginRight: 36,
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   menuButtonHidden: {
     display: "none",
@@ -81,30 +73,33 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     flexShrink: "0",
   },
-  drawerPaper: {
-    position: "fixed",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    flexShrink: "0",
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerPaperClose: {
-    overflowX: "hidden",
+  // drawerPaper: {
+  //   // position: "fixed",
+  //   whiteSpace: "nowrap",
+  //   width: drawerWidth,
+  //   // flexShrink: "0",
+  //   transition: theme.transitions.create("width", {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  // },
+  // drawerPaperClose: {
+  //   overflowX: "hidden",
 
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    width: theme.spacing(7),
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9),
-    },
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
+  //   transition: theme.transitions.create("width", {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.leavingScreen,
+  //   }),
+  //   width: theme.spacing(7),
+  //   [theme.breakpoints.up("sm")]: {
+  //     width: theme.spacing(9),
+  //   },
+  //   [theme.breakpoints.down("md")]: {
+  //     display: "none",
+  //   },
+  // },
+  drawerPaper: {
+    width: drawerWidth,
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
@@ -125,9 +120,17 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  nav_drawer: {
+    [theme.breakpoints.up("sm")]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+  },
+  toolbar: theme.mixins.toolbar,
 }));
 
-export default function DemoSidebar() {
+const DemoSidebar = (props) => {
+  console.log(props);
   const pages = [
     {
       title: "Home",
@@ -162,14 +165,19 @@ export default function DemoSidebar() {
   ];
 
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const { window } = props;
+  const theme = useTheme();
+  // const handleClick = () => {
+  //   if (open) {
+  //     setOpen(false);
+  //   } else {
+  //     setOpen(true);
+  //   }
+  // };
 
-  const handleClick = () => {
-    if (open) {
-      setOpen(false);
-    } else {
-      setOpen(true);
-    }
+  const handleDrawerToggle = () => {
+    setOpen(!open);
   };
 
   const saveFile = () => {
@@ -179,65 +187,103 @@ export default function DemoSidebar() {
     );
   };
 
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
   return (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
         position="fixed"
-        className={clsx(classes.appBar, open && classes.appBarShift)}
+        className={classes.appBar}
+        // className={clsx(classes.appBar, open && classes.appBarShift)}
       >
-        <Toolbar className={classes.toolbar}>
+        <Toolbar>
           <IconButton
-            edge="start"
+            // edge="start"
+            // color="inherit"
+            // aria-label="open drawer"
+            // onClick={handleClick}
+            // className={clsx(
+            //   classes.menuButton,
+            //   open && classes.menuButtonHidden
+            // )}
             color="inherit"
             aria-label="open drawer"
-            onClick={handleClick}
-            className={clsx(
-              classes.menuButton,
-              open && classes.menuButtonHidden
-            )}
+            edge="start"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
           >
             <MenuIcon />
           </IconButton>
-          <Image src="/salman_inayat.png" width={200} height={70} alt="logo" />
+          <Typography variant="h6" noWrap>
+            Responsive drawer
+          </Typography>
+
+          {/* <Image src="/salman_inayat.png" width={200} height={70} alt="logo" /> */}
         </Toolbar>
       </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-        }}
-        open={open}
-      >
-        <div className={classes.toolbarIcon}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleClick}
+      <nav className={classes.nav_drawer} aria-label="mailbox folders">
+        <Hidden xsDown implementation="css">
+          <Drawer
+            // className={classes.drawer}
+            // variant="temporary"
+            // classes={{
+            //   paper: clsx(
+            //     classes.drawerPaper,
+            //     !open && classes.drawerPaperClose
+            //   ),
+            // }}
+            // open={open}
+            container={container}
+            variant="temporary"
+            anchor={theme.direction === "rtl" ? "right" : "left"}
+            open={open}
+            onClose={handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true,
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-        </div>
-        <Divider />
-        <List
-          component="nav"
-          aria-label="main mailbox folders"
-          //   className={SidebarStyle.sidebar_list}
-        >
-          {pages.map((page, i) => (
-            <Link href={page.href} key={i}>
-              <ListItem key={page.title} button>
-                <Button>
-                  <ListItemIcon>{page.icon}</ListItemIcon>
-                  <ListItemText primary={page.title} />
-                </Button>
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-      </Drawer>
+            {/* <div className={classes.toolbarIcon}>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleClick}
+              >
+                <ChevronLeftIcon />
+              </IconButton>
+            </div> */}
+            <div className={classes.toolbar} />
+            <Divider />
+            <List component="nav" aria-label="main mailbox folders">
+              {pages.map((page, i) => (
+                <Link href={page.href} key={i}>
+                  <ListItem key={page.title} button>
+                    <Button>
+                      <ListItemIcon>{page.icon}</ListItemIcon>
+                      <ListItemText primary={page.title} />
+                    </Button>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </Drawer>
+        </Hidden>
+      </nav>
     </div>
   );
-}
+};
+
+DemoSidebar.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+export default DemoSidebar;
