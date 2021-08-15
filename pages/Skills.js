@@ -88,13 +88,13 @@ const Skills = () => {
             <Skill_bars />
           </div>
         </Grid>
-        <Grid item md={6} sm={12}>
+        {/* <Grid item md={6} sm={12}>
           <ChangingProgressProvider values={[0, 80]}>
             {(percentage) => (
               <CircularProgressbar value={percentage} text={`${percentage}%`} />
             )}
           </ChangingProgressProvider>{" "}
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
