@@ -149,7 +149,7 @@ const Projects = () => {
               <br></br>
               {user.techs.map((el, j) => (
                 <span className={local_styles.tech_images} key={j}>
-                  <Image width={40} height={40} src={el} />
+                  <Image width={40} height={40} alt="" src={el} />
                 </span>
               ))}
             </div>
