@@ -2,7 +2,9 @@ import React from "react";
 import styles from "../styles/Skills.module.css";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import ChangingProgressProvider from "../components/ChangingProgressProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,6 +61,8 @@ const Skills = () => {
     },
   ];
 
+  const percentage = 66;
+
   const Skill_bars = () => {
     return skills.map((skill, i) => {
       return (
@@ -79,16 +83,17 @@ const Skills = () => {
   return (
     <div className={classes.root}>
       <Grid container className={classes.main_grid}>
-        <Grid item xs={12} sm={12} md>
-          <Paper>xs=3</Paper>
-        </Grid>
-        <Grid item md={8} className={classes.main_grid}>
+        <Grid item md={6} className={classes.main_grid}>
           <div className={styles.container}>
             <Skill_bars />
           </div>
         </Grid>
-        <Grid item xs={12} sm={12} md>
-          <Paper className={classes.paper}>xs=3</Paper>{" "}
+        <Grid item md={6} sm={12}>
+          <ChangingProgressProvider values={[0, 80]}>
+            {(percentage) => (
+              <CircularProgressbar value={percentage} text={`${percentage}%`} />
+            )}
+          </ChangingProgressProvider>{" "}
         </Grid>
       </Grid>
     </div>
