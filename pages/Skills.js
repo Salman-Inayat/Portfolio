@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import ChangingProgressProvider from "../components/ChangingProgressProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -88,13 +87,6 @@ const Skills = () => {
             <Skill_bars />
           </div>
         </Grid>
-        {/* <Grid item md={6} sm={12}>
-          <ChangingProgressProvider values={[0, 80]}>
-            {(percentage) => (
-              <CircularProgressbar value={percentage} text={`${percentage}%`} />
-            )}
-          </ChangingProgressProvider>{" "}
-        </Grid> */}
       </Grid>
     </div>
   );
