@@ -46,7 +46,7 @@ class AnimatedProgressProvider extends React.Component {
           },
         })}
       >
-        {({ value }) => this.props.children(value)}
+        {({ value, a }) => this.props.children(value)}
       </Animate>
     );
   }
