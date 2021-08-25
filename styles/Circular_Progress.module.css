@@ -1,0 +1,129 @@
+.fullstacks {
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progress_container {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressbar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.progressbar_track {
+  fill: transparent;
+  /* stroke: var(--c-darker-1); */
+  stroke: red;
+  stroke-width: 3px;
+}
+
+.progressbar_thumb {
+  fill: transparent;
+  stroke-width: 3px;
+  stroke-dasharray: 0 calc(30 * 2 * 3.141593);
+  stroke-linecap: round;
+  animation-name: progress;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.3, 1, 0.3, 1);
+  transform: rotate(-89deg);
+  transform-origin: 50% 50%;
+}
+
+.progressbar_thumb_track_1 {
+  /* stroke: var(--c-lighter-1); */
+  stroke: rgb(133, 121, 121);
+
+  animation-duration: 1.8s;
+}
+
+.progressbar_thumb_track_2 {
+  /* stroke: var(--c-lighter); */
+  stroke: rgb(51, 35, 35);
+
+  animation-duration: 1.6s;
+  animation-delay: 0.2s;
+}
+
+.progressbar_thumb_track_3 {
+  /* stroke: var(--c-yellow); */
+  stroke: rgb(202, 214, 25);
+
+  animation-duration: 1.2s;
+  animation-delay: 0.4s;
+}
+
+.progress_content {
+  text-align: center;
+}
+
+.progress_value {
+  color: var(--c-yellow);
+  font-size: 1.5em;
+  position: relative;
+  display: inline-block;
+  transform: scale(0);
+  animation: pulse 400ms 1.6s forwards;
+}
+
+.progress_value::before {
+  content: "%";
+  font-size: 0.5em;
+  position: absolute;
+  top: 4px;
+  left: -12px;
+}
+
+.progress_text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  max-height: 0;
+  overflow-y: hidden;
+  animation: flyin 500ms 1.9s forwards;
+}
+
+@keyframes progress {
+  to {
+    stroke-dasharray: 110;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flyin {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-height: 20px;
+    opacity: 0.5;
+  }
+}

@@ -2,8 +2,9 @@ import React from "react";
 import styles from "../styles/Skills.module.css";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import { CircularProgressbar } from "react-circular-progressbar";
+// import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import Circular_Progress from "../components/Circular_Progress";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,8 +84,12 @@ const Skills = () => {
     <div className={classes.root}>
       <Grid container className={classes.main_grid}>
         <Grid item md={6} className={classes.main_grid}>
-          <div className={styles.container}>
-            <Skill_bars />
+          <div
+            className={styles.container}
+            style={{ width: "300px", height: "300px" }}
+          >
+            {/* <Skill_bars /> */}
+            <Circular_Progress />
           </div>
         </Grid>
       </Grid>
