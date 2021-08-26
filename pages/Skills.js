@@ -100,7 +100,7 @@ const Skills = () => {
     {
       name: "Node.js",
       percent: "70",
-      image: "/nodejs-new-white.png",
+      image: "/NodeJs.png",
     },
     {
       name: "Mongodb",
