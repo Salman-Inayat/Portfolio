@@ -32,7 +32,7 @@ const headersData = [
   },
 ];
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "#400CCC",
     paddingRight: "79px",
@@ -62,6 +62,13 @@ const useStyles = makeStyles(() => ({
   },
   linkContainer: {
     display: "flex",
+  },
+  header_links: {
+    color: "#ffffff",
+    // textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none",
+    },
   },
 }));
 
@@ -152,7 +159,7 @@ export default function Header() {
   const getMenuButtons = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.label} key={i}>
+        <Link href={data.label} key={i} className={classes.header_links}>
           <MenuItem>{data.label}</MenuItem>
         </Link>
       );
