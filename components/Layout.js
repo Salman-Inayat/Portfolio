@@ -4,9 +4,15 @@ import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
-    <Grid container>
+    <Grid
+      container
+      style={{
+        backgroundColor: "#1F2833",
+        height: "height: calc(100% - 110px)",
+      }}
+    >
       <Header />
-      <Grid item md={12} style={{ margin: "50px 0px" }}>
+      <Grid item md={12} style={{ margin: "50px 0px", color: "white" }}>
         <main>{children}</main>
       </Grid>
     </Grid>
