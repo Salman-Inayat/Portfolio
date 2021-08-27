@@ -2,13 +2,7 @@
   padding: 30px;
 }
 
-.pimage {
-  transition: all 0.5s ease-in-out;
-}
 
-.pimage:hover {
-  transform: scale(1.05);
-}
 
 .tech_images {
   width: 40px;
@@ -195,4 +189,14 @@ _ .card_author {
   -webkit-box-decoration-break: clone;
   background-clip: text;
   border-color: white;
+}
+
+.pimage {
+  transition: all 0.5s ease-in-out;
+  width: 450px;
+  height: 300px;
+}
+
+.pimage:hover {
+  transform: scale(1.05);
 }
