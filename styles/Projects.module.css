@@ -1,9 +1,9 @@
-/* .grid_container {
-  padding: 30px;
+.grid_container {
+  /* padding: 30px; */
+  min-width: 100%;
 }
 
-
-
+/* 
 .tech_images {
   width: 40px;
   height: 40px;
@@ -112,7 +112,7 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-_ .card_author {
+/* _ .card_author {
   margin: 3rem 0 0;
   display: grid;
   grid-template-columns: 75px 1fr;
@@ -186,10 +186,11 @@ _ .card_author {
   text-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  box-decoration-break:clone;
   -webkit-box-decoration-break: clone;
   background-clip: text;
   border-color: white;
-}
+} */
 
 .pimage {
   transition: all 0.5s ease-in-out;
@@ -199,4 +200,14 @@ _ .card_author {
 
 .pimage:hover {
   transform: scale(1.05);
+}
+
+.github_img {
+  height: 48px;
+}
+
+.github_button {
+  border-radius: 60px;
+  margin-bottom: 30px;
+  font-size: 3rem;
 }

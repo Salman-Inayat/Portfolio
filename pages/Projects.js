@@ -200,49 +200,51 @@ const Projects = () => {
     //     </Grid>
     //   ))}
     // </Grid>
-    <div className={styles.card_list}>
-      {data.map((user, i) => (
-        <article className={styles.card} key={i}>
-          <header className={styles.card_header}>
-            <Image
-              src={user.name}
-              alt=""
-              width={450}
-              height={300}
-              className={styles.pimage}
-            />
-          </header>
+    <Grid container className={styles.grid_container}>
+      <div className={styles.card_list}>
+        {data.map((user, i) => (
+          <article className={styles.card} key={i}>
+            <header className={styles.card_header}>
+              <Image
+                src={user.name}
+                alt=""
+                width={450}
+                height={300}
+                className={styles.pimage}
+              />
+            </header>
 
-          <div className={styles.content}>
-            <h2>{user.title}</h2>
-            <p>
-              A platform for automating data collection and reporting throughout
-              teams, operations and supply chains.
-            </p>
-            <Link href={user.github}>
-              <Button
-                variant="outlined"
-                color="primary"
-                className={local_styles.button}
-              >
-                <GitHubIcon className={local_styles.githubIcon} />
-                GitHub
-              </Button>
-            </Link>
-            <br></br>
-            {user.techs.map((el, j) => {
-              return (
-                <Tooltip title={`${tooltip(el)}`} arrow key={j}>
-                  <span className={local_styles.tech_images}>
-                    <Image width={40} height={40} alt="" src={el} />
-                  </span>
-                </Tooltip>
-              );
-            })}
-          </div>
-        </article>
-      ))}
-    </div>
+            <div className={styles.content}>
+              <h2>{user.title}</h2>
+              <p>
+                A platform for automating data collection and reporting
+                throughout teams, operations and supply chains.
+              </p>
+              <Link href={user.github}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className={local_styles.button}
+                >
+                  <GitHubIcon className={local_styles.githubIcon} />
+                  GitHub
+                </Button>
+              </Link>
+              <br></br>
+              {user.techs.map((el, j) => {
+                return (
+                  <Tooltip title={`${tooltip(el)}`} arrow key={j}>
+                    <span className={local_styles.tech_images}>
+                      <Image width={40} height={40} alt="" src={el} />
+                    </span>
+                  </Tooltip>
+                );
+              })}
+            </div>
+          </article>
+        ))}
+      </div>
+    </Grid>
   );
 };
 

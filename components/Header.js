@@ -15,12 +15,16 @@ import Image from "next/image";
 
 const headersData = [
   {
-    label: "About Me",
-    href: "AboutMe.js",
+    label: "About",
+    href: "About",
   },
   {
     label: "Skills",
     href: "Skills",
+  },
+  {
+    label: "Experience",
+    href: "Experience",
   },
   {
     label: "Projects",

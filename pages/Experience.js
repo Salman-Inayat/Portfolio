@@ -13,8 +13,8 @@ const Experience = () => {
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(33, 150, 243)", color: "blue" }}
-          contentArrowStyle={{ borderRight: "15px solid  rgb(33, 150, 243)" }}
+          contentStyle={{ backgroundColor: "#9b9ea2", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "15px solid  #9b9ea2" }}
           date="April,2021 - Present"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<GitHubIcon />}
@@ -33,6 +33,8 @@ const Experience = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="March, 2021 - Present"
+          contentStyle={{ backgroundColor: "#9b9ea2", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "15px solid  #9b9ea2" }}
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<GitHubIcon />}
         >
@@ -47,6 +49,8 @@ const Experience = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="November, 2020 - February, 2021"
+          contentStyle={{ backgroundColor: "#9b9ea2", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "15px solid  #9b9ea2" }}
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<GitHubIcon />}
         >
@@ -64,6 +68,8 @@ const Experience = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="August, 2020 - October, 2020"
+          contentStyle={{ backgroundColor: "#9b9ea2", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "15px solid  #9b9ea2" }}
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<GitHubIcon />}
         >
@@ -77,44 +83,6 @@ const Experience = () => {
             Developed websites for the clients and improved existing software
           </p>
         </VerticalTimelineElement>
-        {/* <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="April 2013"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<GitHubIcon />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Content Marketing for Web, Mobile and Social Media
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-          <p>Strategy, Social Media</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="November 2012"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<GitHubIcon />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Agile Development Scrum Master
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-          <p>Creative Direction, User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2002 - 2006"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<GitHubIcon />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Bachelor of Science in Interactive Digital Media Visual Imaging
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Bachelor Degree
-          </h4>
-          <p>Creative Direction, Visual Design</p>
-        </VerticalTimelineElement>*/}
         <VerticalTimelineElement
           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
           icon={<GitHubIcon />}

@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   main_grid: {
     padding: "20px 40px",
+    width: "100%",
     [theme.breakpoints.down("sm")]: {
       width: "100vw",
       padding: "10px",
