@@ -11,13 +11,34 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  button_container: {
-    // margin: "30px 20px",
-  },
+
   button: {
     marginBottom: theme.spacing(2),
     borderRadius: "5em",
-    margin: "10px 10px",
+    margin: "10px 15px 0px 0px",
+  },
+  content_container: {
+    textAlign: "left",
+    padding: theme.spacing(10),
+  },
+  text1: {
+    fontSize: "1.5rem",
+    fontWeight: "400",
+    margin: "10px 0px",
+  },
+  text2: {
+    fontSize: "2.5rem",
+    fontWeight: "500",
+    margin: "0px",
+    color: "#e1b50b",
+  },
+  text3: {
+    fontSize: "1.2rem",
+    fontWeight: "400",
+    letterSpacing: "2px",
+  },
+  techtext: {
+    color: "#e1b50b",
   },
 }));
 
@@ -27,7 +48,13 @@ function Home() {
   return (
     <Grid container style={{ height: "calc(100vh - 100px)" }}>
       <Grid item md={6} className={classes.grid}>
-        <object type="image/svg+xml" data="/main.svg" height={400} width={400}>
+        <object
+          type="image/svg+xml"
+          data="/main.svg"
+          height={400}
+          width={400}
+          style={{ zIndex: "2000" }}
+        >
           svg-animation
         </object>
       </Grid>
@@ -37,23 +64,34 @@ function Home() {
         className={classes.grid}
         style={{ flexDirection: "column" }}
       >
-        <h1>Hello, I am Salman Inayat</h1>
-        <h3>I am a full-stack developer</h3>
-        <div className={classes.button_container}>
-          <Button variant="outlined" color="primary" className={classes.button}>
-            Resume
-          </Button>
-          <Link href="Contact">
+        <div className={classes.content_container}>
+          <h3 className={classes.text1}>HI THERE I'M, </h3>
+          <h1 className={classes.text2}>SALMAN INAYAT</h1>
+          <h3 className={classes.text3}>
+            A <span className={classes.techtext}>Full-Stack Web Developer</span>{" "}
+            passionate about creating interactive applications and experiences
+            on web
+          </h3>
+          <div className={classes.button_container}>
             <Button
               variant="outlined"
               color="primary"
               className={classes.button}
             >
-              Contact Me
+              Resume
             </Button>
-          </Link>
+            <Link href="Contact">
+              <Button
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+              >
+                Contact Me
+              </Button>
+            </Link>
+          </div>
         </div>
-        <Typer text="/About" />
+        {/* <Typer text="/About" /> */}
       </Grid>
     </Grid>
   );

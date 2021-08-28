@@ -38,7 +38,7 @@ const headersData = [
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    backgroundColor: "#400CCC",
+    backgroundColor: "transparent",
     paddingRight: "79px",
     paddingLeft: "118px",
     "@media (max-width: 900px)": {
