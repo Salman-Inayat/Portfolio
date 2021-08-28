@@ -37,8 +37,16 @@ const headersData = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  header: {
+  header1: {
     backgroundColor: "transparent",
+    paddingRight: "79px",
+    paddingLeft: "118px",
+    "@media (max-width: 900px)": {
+      paddingLeft: 0,
+    },
+  },
+  header2: {
+    backgroundColor: "#1F2833",
     paddingRight: "79px",
     paddingLeft: "118px",
     "@media (max-width: 900px)": {
@@ -86,6 +94,16 @@ export default function Header() {
 
   const { mobileView, drawerOpen } = state;
 
+  const [header, setHeader] = useState(`${classes.header1}`);
+
+  const listenScrollEvent = (event) => {
+    if (window.scrollY > 50) {
+      return setHeader(`${classes.header2}`);
+    } else {
+      return setHeader(`${classes.header1}`);
+    }
+  };
+
   useEffect(() => {
     const setResponsiveness = () => {
       return window.innerWidth < 900
@@ -100,6 +118,12 @@ export default function Header() {
     return () => {
       window.removeEventListener("resize", () => setResponsiveness());
     };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+
+    return () => window.removeEventListener("scroll", listenScrollEvent);
   }, []);
 
   const displayDesktop = () => {
@@ -172,7 +196,7 @@ export default function Header() {
 
   return (
     <div>
-      <AppBar className={classes.header}>
+      <AppBar className={header}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </div>
