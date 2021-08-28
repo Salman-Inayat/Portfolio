@@ -24,23 +24,23 @@ export const useFormControls = () => {
     let temp = { ...errors };
 
     if ("fullName" in fieldValues)
-      temp.fullName = fieldValues.fullName ? "" : "This field is required.";
+      temp.fullName = fieldValues.fullName ? "" : "Name is required.";
 
     if ("email" in fieldValues) {
-      temp.email = fieldValues.email ? "" : "This field is required.";
+      temp.email = fieldValues.email ? "" : "Email is required.";
       if (fieldValues.email)
         temp.email = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(fieldValues.email)
           ? ""
           : "Email is not valid.";
     }
 
-    if ("subject" in fieldValues)
-      temp.subject =
-        fieldValues.subject.length !== 0 ? "" : "This field is required.";
+    // if ("subject" in fieldValues)
+    //   temp.subject =
+    //     fieldValues.subject.length !== 0 ? "" : "This field is required.";
 
     if ("message" in fieldValues)
       temp.message =
-        fieldValues.message.length !== 0 ? "" : "This field is required.";
+        fieldValues.message.length !== 0 ? "" : "Message is required.";
 
     setErrors({
       ...temp,
@@ -76,7 +76,7 @@ export const useFormControls = () => {
     const isValid =
       fieldValues.fullName &&
       fieldValues.email &&
-      fieldValues.subject &&
+      // fieldValues.subject &&
       fieldValues.message &&
       Object.values(errors).every((x) => x === "");
 
