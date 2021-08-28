@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     borderRadius: "5em",
     margin: "10px 15px 0px 0px",
+    border: "1px solid rgb(225, 181, 11)",
+    color: "rgb(225, 181, 11)",
+    letterSpacing: "1px",
+    "&:hover": {
+      backgroundColor: "rgb(225, 181, 11)",
+      color: "black",
+    },
   },
   content_container: {
     textAlign: "left",

@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import styles from "../styles/Contact.module.css";
 import { useFormControls } from "../components/ContactFormControls";
 import { makeStyles } from "@material-ui/core/styles";
+import Typer from "../components/Typer";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -12,35 +13,56 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  button_container: {
-    // margin: "30px 20px",
+  grid_container: {
+    minWidth: "100%",
+    margin: "20px 0px",
+    padding: "0px 30px",
+    height: "100%",
   },
   button: {
-    // marginBottom: theme.spacing(2),
+    width: theme.spacing(20),
+    marginBottom: theme.spacing(2),
     borderRadius: "5em",
-    margin: "10px 10px",
-    width: theme.spacing(25),
-    border: "1px solid green",
+    margin: "10px 15px 0px 0px",
+    border: "1px solid rgb(225, 181, 11)",
+    color: "rgb(225, 181, 11)",
+    letterSpacing: "1px",
+    "&:hover": {
+      backgroundColor: "rgb(225, 181, 11)",
+      color: "black",
+    },
   },
   form_container: {
     padding: theme.spacing(10),
     color: "white",
   },
-  textfield: {
-    backgroundColor: "#c4b5b5",
+  multilineColor: {
+    color: "rgb(214, 173, 12)",
+    borderColor: "rgb(214, 173, 12) !important",
+  },
+  notchedOutline: {
+    borderWidth: "1px",
     borderRadius: "10px 10px 3px 3px",
-    margin: "10px 10px",
+    borderColor: "rgb(214, 173, 12) !important",
   },
-  placeholder: {
-    color: "white",
-    margin: "10px",
+  cssLabel: {
+    color: "rgba(202, 195, 195, 0.87)",
   },
-  input: {
-    "&::placeholder": {
-      textOverflow: "ellipsis !important",
-      color: "white",
+  cssOutlinedInput: {
+    "&$cssFocused $notchedOutline": {
+      borderColor: "rgb(214, 173, 12) !important",
     },
   },
+  root: {
+    backgroundColor: "rgb(83, 86, 91)",
+    borderRadius: "10px 10px 3px 3px",
+    margin: "10px 0px",
+    "& .MuiFormLabel-root": {
+      color: "rgb(214, 173, 12)",
+    },
+  },
+
+  cssFocused: {},
 }));
 
 const inputFieldValues = [
@@ -69,7 +91,10 @@ const Contact = () => {
     useFormControls();
 
   return (
-    <Grid container style={{ height: "calc(100vh - 85px)" }}>
+    <Grid container className={classes.grid_container}>
+      <Grid item md={12}>
+        <Typer text="Contact" />
+      </Grid>
       <Grid item md={6} sm={12} xs={12} className={classes.grid}>
         <object
           type="image/svg+xml"
@@ -94,10 +119,20 @@ const Contact = () => {
                 error={errors[inputFieldValue.name.length > 0]}
                 multiline={inputFieldValue.multiline ?? false}
                 rows={inputFieldValue.rows ?? 1}
-                variant="filled"
-                color="secondary"
+                variant="outlined"
+                className={classes.root}
                 InputProps={{
-                  classes: { input: classes.input },
+                  classes: {
+                    root: classes.cssOutlinedInput,
+                    focused: classes.cssFocused,
+                    notchedOutline: classes.notchedOutline,
+                  },
+                }}
+                InputLabelProps={{
+                  classes: {
+                    root: classes.cssLabel,
+                    focused: classes.cssFocused,
+                  },
                 }}
                 // InputLabelProps={{
                 //   style: {
@@ -110,7 +145,7 @@ const Contact = () => {
                 //   },
                 // }}
                 autoComplete="none"
-                className={classes.textfield}
+                // className={classes.textfield}
                 {...(errors[inputFieldValue.name] && {
                   error: true,
                   helperText: errors[inputFieldValue.name],
@@ -129,6 +164,9 @@ const Contact = () => {
             Send Message
           </Button>
         </form>
+      </Grid>
+      <Grid item md={12}>
+        <Typer text="/Contact" />
       </Grid>
     </Grid>
   );

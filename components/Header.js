@@ -76,10 +76,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   header_links: {
-    color: "#ffffff",
-    // textDecoration: "none",
+    color: "rgb(225, 181, 11)",
+
     "&:hover": {
       textDecoration: "none",
+      borderBottom: "1px solid rgb(225, 181, 11)",
+    },
+    "&:active": {
+      backgroundColor: "rgb(225, 181, 11)",
     },
   },
 }));

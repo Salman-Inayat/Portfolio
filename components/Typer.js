@@ -27,7 +27,7 @@ const Typer = (props) => {
   }, []);
 
   return (
-    <div className="wrap">
+    <div className={classes.wrap}>
       <div className="type-wrap">
         <span className={classes.text} ref={el} />
       </div>

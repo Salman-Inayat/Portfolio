@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   card: {
     width: "100%",
     height: "100%",
-
     maxHeight: "300px",
     padding: "auto",
     textAlign: "center",
@@ -117,31 +116,42 @@ const Skills = () => {
         <Grid item md={2} sm={12} key={i} className={classes.card_grid}>
           <div className={classes.card}>
             <div className={classes.card__content}>
-              <AnimatedProgressProvider
-                valueStart={0}
-                valueEnd={value}
-                duration={1.4}
-                easingFunction={easeQuadInOut}
-              >
-                {(value) => {
-                  const roundedValue = Math.round(value);
-                  return (
-                    <CircularProgressbar
-                      value={value}
-                      text={`${roundedValue}%`}
-                      background
-                      backgroundPadding={6}
-                      styles={buildStyles({
-                        backgroundColor: "#3e98c7",
-                        pathTransition: "none",
-                        textColor: "white",
-                        pathColor: "white",
-                        trailColor: "transparent",
-                      })}
-                    />
-                  );
+              <div
+                style={{
+                  height: "100px",
+                  width: "100px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-              </AnimatedProgressProvider>
+              >
+                <AnimatedProgressProvider
+                  valueStart={0}
+                  valueEnd={value}
+                  duration={1.4}
+                  easingFunction={easeQuadInOut}
+                >
+                  {(value) => {
+                    const roundedValue = Math.round(value);
+                    return (
+                      <CircularProgressbar
+                        value={value}
+                        text={`${roundedValue}%`}
+                        background
+                        backgroundPadding={6}
+                        styles={buildStyles({
+                          backgroundColor: "#3e98c7",
+                          pathTransition: "none",
+                          textColor: "white",
+                          pathColor: "white",
+                          trailColor: "transparent",
+                          height: "150px",
+                        })}
+                      />
+                    );
+                  }}
+                </AnimatedProgressProvider>
+              </div>
               <div className={classes.skill_content}>
                 <Typography variant="h5" component="h2">
                   {skill.name}
@@ -157,7 +167,7 @@ const Skills = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.main_grid} spacing={1}>
+      <Grid container className={classes.main_grid}>
         <Grid item md={12} className={classes.skills_header}>
           <Typography gutterBottom variant="h5" component="h2">
             Skills I am good at

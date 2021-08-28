@@ -1,6 +1,28 @@
 .container {
-  margin: 50px 30px;
+  margin: 20px 0px;
   padding: 30px;
   background-color: transparent;
-  color: black;
+}
+
+.vertical_timeline_element_title {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: "5px 0px";
+  text-transform: uppercase;
+  color: rgb(225, 181, 11);
+}
+
+.vertical_timeline_element_subtitle {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.vertical_timeline_element_description {
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.date {
+  color: white;
 }
