@@ -15,8 +15,8 @@ import Image from "next/image";
 
 const headersData = [
   {
-    label: "About",
-    href: "About",
+    label: "Home",
+    href: "/",
   },
   {
     label: "Skills",
@@ -163,7 +163,7 @@ export default function Header() {
   const getMenuButtons = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.label} key={i} className={classes.header_links}>
+        <Link href={data.href} key={i} className={classes.header_links}>
           <MenuItem>{data.label}</MenuItem>
         </Link>
       );
