@@ -13,7 +13,6 @@ const Typer = (props) => {
     const options = {
       strings: [props.text],
       typeSpeed: 150,
-      backSpeed: 50,
       showCursor: false,
     };
 
