@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
   content_container: {
     textAlign: "left",
     padding: theme.spacing(10),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(3),
+    },
   },
   text1: {
     fontSize: "1.5rem",
@@ -53,6 +56,12 @@ const useStyles = makeStyles((theme) => ({
   techtext: {
     color: "#e1b50b",
   },
+  gif: {
+    zIndex: "2000",
+    [theme.breakpoints.down("sm")]: {
+      height: "85%",
+    },
+  },
 }));
 
 function Home() {
@@ -66,7 +75,7 @@ function Home() {
           data="/main.svg"
           height={400}
           width={400}
-          style={{ zIndex: "2000" }}
+          className={classes.gif}
         >
           svg-animation
         </object>

@@ -4,8 +4,6 @@
   padding: 10px 30px;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
-
 .card_list {
   padding: 80px;
   display: flex;
@@ -35,7 +33,6 @@
   border-radius: 16px;
   background: rgb(83, 86, 91);
   border: 1px solid rgb(225, 181, 11);
-
   box-shadow: -1rem 0 3rem #000;
   display: flex;
   flex-direction: column;
@@ -117,4 +114,26 @@
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0px 150px;
+  }
+
+  .card_list {
+    padding: 0px;
+    /* flex-direction: column; */
+    /* overflow-x: unset; */
+  }
+
+  .card_list > :first-child {
+    margin-left: 0px;
+  }
+
+  .card_list > :last-child {
+    margin-right: 0px;
+  }
 }

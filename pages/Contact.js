@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px 0px",
     padding: "0px 30px",
     height: "100%",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0px",
+    },
   },
   button: {
     width: theme.spacing(20),
@@ -35,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
   form_container: {
     padding: theme.spacing(10),
     color: "white",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2.5),
+    },
   },
   multilineColor: {
     color: "rgb(214, 173, 12)",
@@ -63,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   cssFocused: {},
+  gif: {
+    height: "85%",
+  },
 }));
 
 const inputFieldValues = [
@@ -101,6 +110,7 @@ const Contact = () => {
           data="/contact-gif.svg"
           height={400}
           width={400}
+          className={classes.gif}
         >
           svg-animation
         </object>

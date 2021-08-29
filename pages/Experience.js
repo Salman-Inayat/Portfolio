@@ -35,7 +35,7 @@ const data = [
     subtitle: "Hactric Solutions",
     description:
       "Developed websites for the clients and improved existing software",
-    date: "April,2021 - Present",
+    date: "August, 2020 - October, 2020",
   },
 ];
 

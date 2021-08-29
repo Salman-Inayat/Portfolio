@@ -71,3 +71,10 @@
     border-color: orange;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .text {
+    margin: 0px 0.8rem;
+    font-size: 1.8rem;
+  }
+}

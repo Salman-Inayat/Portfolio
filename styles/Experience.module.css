@@ -31,3 +31,9 @@
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+}

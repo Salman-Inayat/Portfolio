@@ -77,10 +77,8 @@ const useStyles = makeStyles((theme) => ({
   },
   header_links: {
     color: "rgb(225, 181, 11)",
-
     fontFamily: "'Handlee', cursive",
     transition: "all .3s ",
-
     "&:hover": {
       textDecoration: "none",
       borderBottom: "1px solid rgb(225, 181, 11)",
@@ -99,6 +97,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3rem",
     margin: "0px",
     color: "rgb(225, 181, 11)",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+      margin: "10px 0px 10px 25px",
+    },
   },
   logoLink: {
     textDecoration: "none",
@@ -106,6 +108,10 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       textDecoration: "none",
     },
+  },
+  menuIcon: {
+    color: "rgb(225, 181, 11)",
+    fontSize: "2rem",
   },
 }));
 
@@ -178,7 +184,7 @@ export default function Header() {
             onClick: handleDrawerOpen,
           }}
         >
-          <MenuIcon />
+          <MenuIcon className={classes.menuIcon} />
         </IconButton>
 
         <Drawer
@@ -199,7 +205,7 @@ export default function Header() {
   const getDrawerChoices = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.label} key={i}>
+        <Link href={data.href} key={i}>
           <MenuItem>{data.label}</MenuItem>
         </Link>
       );
@@ -207,7 +213,6 @@ export default function Header() {
   };
 
   const femmecubatorLogo = (
-    // <Image src={"/logo.png"} alt="" width={300} height={60} />
     <Link href="/" className={classes.logoLink}>
       <h4 className={classes.logoText}>{logoText}</h4>
     </Link>

@@ -29,11 +29,25 @@ const useStyles = makeStyles((theme) => ({
   },
   card_grid: {
     margin: "20px 0px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "5px 0px",
+    },
   },
   skills_header: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  card__container: {
+    margin: "auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.up("xl")]: {
+      height: "180px",
+      textAlign: "center",
+      width: "180px",
+    },
   },
   card: {
     width: "100%",
@@ -44,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
     background: "rgb(83, 86, 91)",
     borderRadius: "10px",
     // boxShadow: "25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f",
+    [theme.breakpoints.down("sm")]: {
+      height: "90%",
+    },
   },
   card__content: {
     width: "100%",
@@ -147,15 +164,7 @@ const Skills = () => {
         <Grid item md={2} sm={6} xs={6} key={i} className={classes.card_grid}>
           <div className={classes.card}>
             <div className={classes.card__content}>
-              <div
-                style={{
-                  height: "150px",
-                  width: "150px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <div className={classes.card__container}>
                 <AnimatedProgressProvider
                   valueStart={0}
                   valueEnd={value}
@@ -173,7 +182,7 @@ const Skills = () => {
                           textColor: "white",
                           pathColor: "rgb(225, 181, 11)",
                           trailColor: "rgb(115, 93, 10)",
-                          height: "200px",
+                          margin: "auto",
                         })}
                       />
                     );
