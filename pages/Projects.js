@@ -186,7 +186,7 @@ const Projects = () => {
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
-                <Image
+                <img
                   src={project.name}
                   alt=""
                   width={450}
@@ -215,7 +215,7 @@ const Projects = () => {
                   return (
                     <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
                       <span className={local_styles.tech_images}>
-                        <Image width={40} height={40} alt="" src={el} />
+                        <img width={40} height={40} alt="" src={el} />
                       </span>
                     </CustomizedTooltip>
                   );

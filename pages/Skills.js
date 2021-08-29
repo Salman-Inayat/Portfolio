@@ -215,7 +215,7 @@ const Skills = () => {
                   <Typography variant="h5" component="h2">
                     {skill.name}
                   </Typography>
-                  <Image width={40} height={40} alt="" src={skill.image} />
+                  <img width={40} height={40} alt="" src={skill.image} />
                 </div>
               </div>
             </div>

@@ -136,4 +136,9 @@
   .card_list > :last-child {
     margin-right: 0px;
   }
+
+  .pimage {
+    width: 300px;
+    height: 200px;
+  }
 }
