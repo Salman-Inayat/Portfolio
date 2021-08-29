@@ -34,13 +34,13 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px 0px",
   },
   text2: {
-    fontSize: "2.5rem",
+    fontSize: "3rem",
     fontWeight: "500",
     margin: "0px",
     color: "#e1b50b",
   },
   text3: {
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
     fontWeight: "400",
     letterSpacing: "2px",
   },
@@ -80,13 +80,15 @@ function Home() {
             on web
           </h3>
           <div className={classes.button_container}>
-            <Button
-              variant="outlined"
-              color="primary"
-              className={classes.button}
-            >
-              Resume
-            </Button>
+            <Link href="/Salman_Inayat_Resume.pdf" download>
+              <Button
+                variant="outlined"
+                color="primary"
+                className={classes.button}
+              >
+                Resume
+              </Button>
+            </Link>
             <Link href="Contact">
               <Button
                 variant="outlined"

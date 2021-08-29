@@ -90,7 +90,10 @@ const Experience = () => {
             );
           })}
           <VerticalTimelineElement
-            iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+            iconStyle={{
+              background: "rgb(225, 181, 11)",
+              color: "rgb(31, 40, 51)",
+            }}
             icon={<GitHubIcon />}
           />{" "}
         </VerticalTimeline>

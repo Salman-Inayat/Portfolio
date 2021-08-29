@@ -14,6 +14,14 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginBottom: theme.spacing(2),
     borderRadius: "5em",
+    margin: "10px 15px 0px 0px",
+    border: "1px solid rgb(225, 181, 11)",
+    color: "rgb(225, 181, 11)",
+    letterSpacing: "1px",
+    "&:hover": {
+      backgroundColor: "rgb(225, 181, 11)",
+      color: "black",
+    },
   },
   githubIcon: {
     marginRight: ".2rem",
@@ -154,53 +162,6 @@ const Projects = () => {
   };
 
   return (
-    // <Grid container className={Styles.grid_container}>
-    //   {data.map((user, i) => (
-    //     <Grid item md={12} className={local_styles.individualGrid} key={i}>
-    //       <Grid
-    //         item
-    //         xs={12}
-    //         sm={8}
-    //         md={6}
-    //         justifyContent="center"
-    //         alignItems="center"
-    //       >
-    //         <Image
-    //           src={user.name}
-    //           alt=""
-    //           width={450}
-    //           height={300}
-    //           className={Styles.pimage}
-    //         />
-    //       </Grid>
-    //       <Grid item xs={12} sm={4} md={6}>
-    //         <div className={Styles.content}>
-    //           <h2>{user.title}</h2>
-    //           <p>
-    //             A platform for automating data collection and reporting
-    //             throughout teams, operations and supply chains.
-    //           </p>
-    //           <Link href={user.github}>
-    //             <Button
-    //               variant="outlined"
-    //               color="primary"
-    //               className={local_styles.button}
-    //             >
-    //               <GitHubIcon className={local_styles.githubIcon} />
-    //               GitHub
-    //             </Button>
-    //           </Link>
-    //           <br></br>
-    //           {user.techs.map((el, j) => (
-    //             <span className={local_styles.tech_images} key={j}>
-    //               <Image width={40} height={40} alt="" src={el} />
-    //             </span>
-    //           ))}
-    //         </div>
-    //       </Grid>
-    //     </Grid>
-    //   ))}
-    // </Grid>
     <Grid container className={styles.grid_container}>
       <Grid item md={12}>
         <Typer text="Projects" />
@@ -220,8 +181,8 @@ const Projects = () => {
               </header>
 
               <div className={styles.content}>
-                <h2>{user.title}</h2>
-                <p>
+                <h2 className={styles.content_title}>{user.title}</h2>
+                <p className={styles.content_description}>
                   A platform for automating data collection and reporting
                   throughout teams, operations and supply chains.
                 </p>

@@ -6,10 +6,9 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "../node_modules/react-circular-progressbar/dist/styles.css";
 import AnimatedProgressProvider from "../components/AnimatedProgressProvider";
 import { easeQuadInOut } from "../node_modules/d3-ease/src/index";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
+import Typer from "../components/Typer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   card_grid: {
-    margin: "20px",
+    margin: "20px 0px",
   },
   skills_header: {
     display: "flex",
@@ -42,19 +41,21 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "300px",
     padding: "auto",
     textAlign: "center",
-    background: "#242625",
+    background: "rgb(83, 86, 91)",
     borderRadius: "10px",
-    boxShadow: "25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f",
+    // boxShadow: "25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f",
   },
   card__content: {
     width: "100%",
     height: "100%",
-    background: "#191a19",
+    background: "rgb(83, 86, 91)",
     margin: "10px auto",
     borderRadius: "5px",
     padding: "40px 20px 20px 20px",
+    border: "1px solid rgb(225, 181, 11)",
+
     cursor: "pointer",
-    boxShadow: "6px 16px 44px #0a0a0a, -16px -16px 44px #282a28",
+    // boxShadow: "6px 16px 44px #0a0a0a, -16px -16px 44px #282a28",
     transition: "0.3s all ease-in-out",
     "&:hover": {
       marginTop: "-10px",
@@ -107,19 +108,49 @@ const Skills = () => {
       percent: "70",
       image: "/mongodb.png",
     },
+    {
+      name: "HTML",
+      percent: "95",
+      image: "/HTML.png",
+    },
+    {
+      name: "CSS",
+      percent: "90",
+      image: "/CSS.png",
+    },
+    {
+      name: "Javascript",
+      percent: "95",
+      image: "/JS.png",
+    },
+    {
+      name: "React.js",
+      percent: "80",
+      image: "/reactjs.png",
+    },
+    {
+      name: "Node.js",
+      percent: "70",
+      image: "/NodeJs.png",
+    },
+    {
+      name: "Mongodb",
+      percent: "70",
+      image: "/mongodb.png",
+    },
   ];
 
   const Skill_bars = () => {
     return skills.map((skill, i) => {
       const value = skill.percent;
       return (
-        <Grid item md={2} sm={12} key={i} className={classes.card_grid}>
+        <Grid item md={2} sm={6} xs={6} key={i} className={classes.card_grid}>
           <div className={classes.card}>
             <div className={classes.card__content}>
               <div
                 style={{
-                  height: "100px",
-                  width: "100px",
+                  height: "150px",
+                  width: "150px",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -137,15 +168,12 @@ const Skills = () => {
                       <CircularProgressbar
                         value={value}
                         text={`${roundedValue}%`}
-                        background
-                        backgroundPadding={6}
                         styles={buildStyles({
-                          backgroundColor: "#3e98c7",
                           pathTransition: "none",
                           textColor: "white",
-                          pathColor: "white",
-                          trailColor: "transparent",
-                          height: "150px",
+                          pathColor: "rgb(225, 181, 11)",
+                          trailColor: "rgb(115, 93, 10)",
+                          height: "200px",
                         })}
                       />
                     );
@@ -156,7 +184,7 @@ const Skills = () => {
                 <Typography variant="h5" component="h2">
                   {skill.name}
                 </Typography>
-                <Image width={50} height={50} alt="" src={skill.image} />
+                <Image width={40} height={40} alt="" src={skill.image} />
               </div>
             </div>
           </div>
@@ -167,13 +195,16 @@ const Skills = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.main_grid}>
-        <Grid item md={12} className={classes.skills_header}>
-          <Typography gutterBottom variant="h5" component="h2">
-            Skills I am good at
-          </Typography>
+      <Grid container className={classes.main_grid} spcaing={2}>
+        <Grid item md={12}>
+          <Typer text="Skills" />
         </Grid>
-        <Skill_bars />
+        <Grid container spacing={2}>
+          <Skill_bars />
+        </Grid>
+        <Grid item md={12}>
+          <Typer text="/Skills" />
+        </Grid>
       </Grid>
     </div>
   );

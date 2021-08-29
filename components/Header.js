@@ -39,16 +39,16 @@ const headersData = [
 const useStyles = makeStyles((theme) => ({
   header1: {
     backgroundColor: "transparent",
-    paddingRight: "79px",
-    paddingLeft: "118px",
+    boxShadow: "none",
+    padding: "20px 79px 20px 50px",
     "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
   },
   header2: {
     backgroundColor: "#1F2833",
-    paddingRight: "79px",
-    paddingLeft: "118px",
+
+    padding: "20px 79px 20px 50px",
     "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header_links: {
     color: "rgb(225, 181, 11)",
-
+    fontsize: "1.3rem",
     "&:hover": {
       textDecoration: "none",
       borderBottom: "1px solid rgb(225, 181, 11)",
@@ -85,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
     "&:active": {
       backgroundColor: "rgb(225, 181, 11)",
     },
+  },
+  header_link_text: {
+    fontSize: "1.2rem",
   },
 }));
 
@@ -185,14 +188,14 @@ export default function Header() {
   };
 
   const femmecubatorLogo = (
-    <Image src={"/salman_inayat.png"} alt="" width={200} height={70} />
+    <Image src={"/logo.png"} alt="" width={300} height={60} />
   );
 
   const getMenuButtons = () => {
     return headersData.map((data, i) => {
       return (
         <Link href={data.href} key={i} className={classes.header_links}>
-          <MenuItem>{data.label}</MenuItem>
+          <MenuItem className={classes.header_link_text}>{data.label}</MenuItem>
         </Link>
       );
     });

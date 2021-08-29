@@ -9,12 +9,14 @@
   font-weight: 500;
   margin: "5px 0px";
   text-transform: uppercase;
+  letter-spacing: 1px;
   color: rgb(225, 181, 11);
 }
 
 .vertical_timeline_element_subtitle {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .vertical_timeline_element_description {
@@ -25,4 +27,6 @@
 
 .date {
   color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
