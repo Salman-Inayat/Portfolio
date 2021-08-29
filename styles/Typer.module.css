@@ -50,7 +50,7 @@
   font-size: 2rem;
   /* font-family: monospace; */
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
+  border-right: 0.15em solid rgb(225, 181, 11); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 2.5rem; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
@@ -68,7 +68,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: rgb(225, 181, 11);
   }
 }
 

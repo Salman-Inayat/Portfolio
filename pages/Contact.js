@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px 15px 0px 0px",
     border: "1px solid rgb(225, 181, 11)",
     color: "rgb(225, 181, 11)",
+    fontWeight: "bold",
     letterSpacing: "1px",
     "&:hover": {
       backgroundColor: "rgb(225, 181, 11)",

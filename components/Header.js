@@ -70,7 +70,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   drawerContainer: {
-    padding: "20px 30px",
+    padding: "50px 30px",
+    backgroundColor: "#1F2833",
+    height: "100%",
   },
   linkContainer: {
     display: "flex",
@@ -92,6 +94,16 @@ const useStyles = makeStyles((theme) => ({
   header_link_text: {
     fontSize: "1.2rem",
     fontWeight: "bold",
+  },
+  drawer_links: {
+    color: "rgb(225, 181, 11)",
+    fontFamily: "'Handlee', cursive",
+    transition: "all .3s ",
+  },
+  drawer_link_text: {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    margin: "15px 0px",
   },
   logoText: {
     fontSize: "3rem",
@@ -205,8 +217,8 @@ export default function Header() {
   const getDrawerChoices = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.href} key={i}>
-          <MenuItem>{data.label}</MenuItem>
+        <Link href={data.href} key={i} className={classes.drawer_links}>
+          <MenuItem className={classes.drawer_link_text}>{data.label}</MenuItem>
         </Link>
       );
     });

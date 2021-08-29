@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px 15px 0px 0px",
     border: "1px solid rgb(225, 181, 11)",
     color: "rgb(225, 181, 11)",
+    fontWeight: "bold",
     letterSpacing: "1px",
     "&:hover": {
       backgroundColor: "rgb(225, 181, 11)",
@@ -68,6 +69,23 @@ const useStyles = makeStyles((theme) => ({
     padding: "1.5rem",
   },
 }));
+
+const useStylesBootstrap = makeStyles((theme) => ({
+  arrow: {
+    color: "rgb(225, 181, 11)",
+  },
+  tooltip: {
+    backgroundColor: "rgb(225, 181, 11)",
+    color: "black",
+    fontWeight: "bold",
+  },
+}));
+
+function CustomizedTooltip(props) {
+  const classes = useStylesBootstrap();
+
+  return <Tooltip arrow classes={classes} {...props} />;
+}
 
 const Projects = () => {
   const data = [
@@ -200,11 +218,11 @@ const Projects = () => {
                 <br></br>
                 {user.techs.map((el, j) => {
                   return (
-                    <Tooltip title={`${tooltip(el)}`} arrow key={j}>
+                    <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
                       <span className={local_styles.tech_images}>
                         <Image width={40} height={40} alt="" src={el} />
                       </span>
-                    </Tooltip>
+                    </CustomizedTooltip>
                   );
                 })}
               </div>
