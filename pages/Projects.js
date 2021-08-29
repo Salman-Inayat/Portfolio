@@ -112,8 +112,8 @@ const Projects = () => {
       description: "My portfolio website to showcase my skills and projects.",
     },
     {
-      name: "/Jahangiri_Laptop.png",
-      title: "Jehangiri Associates",
+      name: "/Jehangiri_Laptop.png",
+      title: "Jahangiri Associates",
       techs: ["/ReactJs.png", "/Bootstrap.png", "/NodeJs.png"],
       github: "https://github.com/Salman-Inayat/Jehangiri-Associates",
       description:
