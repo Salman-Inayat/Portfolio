@@ -6,6 +6,7 @@ import styles from "../styles/Contact.module.css";
 import { useFormControls } from "../components/ContactFormControls";
 import { makeStyles } from "@material-ui/core/styles";
 import Typer from "../components/Typer";
+import Fade from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -117,64 +118,66 @@ const Contact = () => {
         </object>
       </Grid>
       <Grid item md={6} sm={12} xs={12} className={classes.form_container}>
-        <form className={styles.form} onSubmit={handleFormSubmit}>
-          {inputFieldValues.map((inputFieldValue, index) => {
-            return (
-              <TextField
-                key={index}
-                // onBlur={handleInputValue}
-                onChange={handleInputValue}
-                fullWidth
-                name={inputFieldValue.name}
-                label={inputFieldValue.label}
-                error={errors[inputFieldValue.name.length > 0]}
-                multiline={inputFieldValue.multiline ?? false}
-                rows={inputFieldValue.rows ?? 1}
-                variant="outlined"
-                className={classes.root}
-                InputProps={{
-                  classes: {
-                    root: classes.cssOutlinedInput,
-                    focused: classes.cssFocused,
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-                InputLabelProps={{
-                  classes: {
-                    root: classes.cssLabel,
-                    focused: classes.cssFocused,
-                  },
-                }}
-                // InputLabelProps={{
-                //   style: {
-                //     textOverflow: "ellipsis",
-                //     whiteSpace: "nowrap",
-                //     overflow: "hidden",
-                //     width: "100%",
-                //     color: "white",
-                //     marginRight: "20px",
-                //   },
-                // }}
-                autoComplete="none"
-                // className={classes.textfield}
-                {...(errors[inputFieldValue.name] && {
-                  error: true,
-                  helperText: errors[inputFieldValue.name],
-                })}
-              />
-            );
-          })}
-          <Button
-            variant="outlined"
-            onSubmit={handleInputValue}
-            type="submit"
-            color="primary"
-            // disabled={!formIsValid()}
-            className={classes.button}
-          >
-            Send Message
-          </Button>
-        </form>
+        <Fade right>
+          <form className={styles.form} onSubmit={handleFormSubmit}>
+            {inputFieldValues.map((inputFieldValue, index) => {
+              return (
+                <TextField
+                  key={index}
+                  // onBlur={handleInputValue}
+                  onChange={handleInputValue}
+                  fullWidth
+                  name={inputFieldValue.name}
+                  label={inputFieldValue.label}
+                  error={errors[inputFieldValue.name.length > 0]}
+                  multiline={inputFieldValue.multiline ?? false}
+                  rows={inputFieldValue.rows ?? 1}
+                  variant="outlined"
+                  className={classes.root}
+                  InputProps={{
+                    classes: {
+                      root: classes.cssOutlinedInput,
+                      focused: classes.cssFocused,
+                      notchedOutline: classes.notchedOutline,
+                    },
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.cssLabel,
+                      focused: classes.cssFocused,
+                    },
+                  }}
+                  // InputLabelProps={{
+                  //   style: {
+                  //     textOverflow: "ellipsis",
+                  //     whiteSpace: "nowrap",
+                  //     overflow: "hidden",
+                  //     width: "100%",
+                  //     color: "white",
+                  //     marginRight: "20px",
+                  //   },
+                  // }}
+                  autoComplete="none"
+                  // className={classes.textfield}
+                  {...(errors[inputFieldValue.name] && {
+                    error: true,
+                    helperText: errors[inputFieldValue.name],
+                  })}
+                />
+              );
+            })}
+            <Button
+              variant="outlined"
+              onSubmit={handleInputValue}
+              type="submit"
+              color="primary"
+              // disabled={!formIsValid()}
+              className={classes.button}
+            >
+              Send Message
+            </Button>
+          </form>
+        </Fade>
       </Grid>
       <Grid item md={12}>
         <Typer text="/Contact" />

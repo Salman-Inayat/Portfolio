@@ -9,6 +9,7 @@ import { easeQuadInOut } from "../node_modules/d3-ease/src/index";
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
 import Typer from "../components/Typer";
+import Fade from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -162,41 +163,43 @@ const Skills = () => {
       const value = skill.percent;
       return (
         <Grid item md={2} sm={6} xs={6} key={i} className={classes.card_grid}>
-          <div className={classes.card}>
-            <div className={classes.card__content}>
-              <div className={classes.card__container}>
-                <AnimatedProgressProvider
-                  valueStart={0}
-                  valueEnd={value}
-                  duration={1.4}
-                  easingFunction={easeQuadInOut}
-                >
-                  {(value) => {
-                    const roundedValue = Math.round(value);
-                    return (
-                      <CircularProgressbar
-                        value={value}
-                        text={`${roundedValue}%`}
-                        styles={buildStyles({
-                          pathTransition: "none",
-                          textColor: "white",
-                          pathColor: "rgb(225, 181, 11)",
-                          trailColor: "rgb(115, 93, 10)",
-                          margin: "auto",
-                        })}
-                      />
-                    );
-                  }}
-                </AnimatedProgressProvider>
-              </div>
-              <div className={classes.skill_content}>
-                <Typography variant="h5" component="h2">
-                  {skill.name}
-                </Typography>
-                <Image width={40} height={40} alt="" src={skill.image} />
+          <Fade bottom>
+            <div className={classes.card}>
+              <div className={classes.card__content}>
+                <div className={classes.card__container}>
+                  <AnimatedProgressProvider
+                    valueStart={0}
+                    valueEnd={value}
+                    duration={1.4}
+                    easingFunction={easeQuadInOut}
+                  >
+                    {(value) => {
+                      const roundedValue = Math.round(value);
+                      return (
+                        <CircularProgressbar
+                          value={value}
+                          text={`${roundedValue}%`}
+                          styles={buildStyles({
+                            pathTransition: "none",
+                            textColor: "white",
+                            pathColor: "rgb(225, 181, 11)",
+                            trailColor: "rgb(115, 93, 10)",
+                            margin: "auto",
+                          })}
+                        />
+                      );
+                    }}
+                  </AnimatedProgressProvider>
+                </div>
+                <div className={classes.skill_content}>
+                  <Typography variant="h5" component="h2">
+                    {skill.name}
+                  </Typography>
+                  <Image width={40} height={40} alt="" src={skill.image} />
+                </div>
               </div>
             </div>
-          </div>
+          </Fade>
         </Grid>
       );
     });

@@ -9,6 +9,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import styles from "../styles/Projects.module.css";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typer from "../components/Typer";
+import Fade from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -188,45 +189,47 @@ const Projects = () => {
       <Grid item md={12}>
         <div className={styles.card_list}>
           {data.map((user, i) => (
-            <article className={styles.card} key={i}>
-              <header className={styles.card_header}>
-                <Image
-                  src={user.name}
-                  alt=""
-                  width={450}
-                  height={300}
-                  className={styles.pimage}
-                />
-              </header>
+            <Fade bottom key={i}>
+              <article className={styles.card}>
+                <header className={styles.card_header}>
+                  <Image
+                    src={user.name}
+                    alt=""
+                    width={450}
+                    height={300}
+                    className={styles.pimage}
+                  />
+                </header>
 
-              <div className={styles.content}>
-                <h2 className={styles.content_title}>{user.title}</h2>
-                <p className={styles.content_description}>
-                  A platform for automating data collection and reporting
-                  throughout teams, operations and supply chains.
-                </p>
-                <Link href={user.github}>
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    className={local_styles.button}
-                  >
-                    <GitHubIcon className={local_styles.githubIcon} />
-                    GitHub
-                  </Button>
-                </Link>
-                <br></br>
-                {user.techs.map((el, j) => {
-                  return (
-                    <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
-                      <span className={local_styles.tech_images}>
-                        <Image width={40} height={40} alt="" src={el} />
-                      </span>
-                    </CustomizedTooltip>
-                  );
-                })}
-              </div>
-            </article>
+                <div className={styles.content}>
+                  <h2 className={styles.content_title}>{user.title}</h2>
+                  <p className={styles.content_description}>
+                    A platform for automating data collection and reporting
+                    throughout teams, operations and supply chains.
+                  </p>
+                  <Link href={user.github}>
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      className={local_styles.button}
+                    >
+                      <GitHubIcon className={local_styles.githubIcon} />
+                      GitHub
+                    </Button>
+                  </Link>
+                  <br></br>
+                  {user.techs.map((el, j) => {
+                    return (
+                      <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
+                        <span className={local_styles.tech_images}>
+                          <Image width={40} height={40} alt="" src={el} />
+                        </span>
+                      </CustomizedTooltip>
+                    );
+                  })}
+                </div>
+              </article>
+            </Fade>
           ))}
         </div>
       </Grid>

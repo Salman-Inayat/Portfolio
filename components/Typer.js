@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "../styles/Typer.module.css";
 import Typed from "typed.js";
 import classes from "../styles/Typer.module.css";
+import Fade from "react-reveal";
 
 const Typer = (props) => {
   // Create reference to store the DOM element containing the animation
@@ -27,11 +28,13 @@ const Typer = (props) => {
   }, []);
 
   return (
-    <div className={classes.wrap}>
-      <div className="type-wrap">
-        <span className={classes.text} ref={el} />
+    <Fade left>
+      <div className={classes.wrap}>
+        <div className="type-wrap">
+          <span className={classes.text} ref={el} />
+        </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

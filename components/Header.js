@@ -98,7 +98,10 @@ const useStyles = makeStyles((theme) => ({
   drawer_links: {
     color: "rgb(225, 181, 11)",
     fontFamily: "'Handlee', cursive",
-    transition: "all .3s ",
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none",
+    },
   },
   drawer_link_text: {
     fontSize: "1.2rem",
