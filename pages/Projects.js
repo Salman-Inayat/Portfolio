@@ -95,85 +95,74 @@ function CustomizedTooltip(props) {
 }
 
 const Projects = () => {
-  const data = [
+  const projects = [
     {
-      id: 1,
       name: "/POS_Laptop.png",
       title: "Point of Sales",
-      techs: ["/PHP.png", "/MySQL.png"],
+      techs: ["/ReactJs.png", "/NodeJs.png", "/mongodb.png", "/MaterialUI.png"],
       github: "https://github.com/Salman-Inayat/Point-Of-Sales",
+      description:
+        "An inventory management system with managing orders and data visualization",
     },
     {
-      id: 2,
+      name: "/Portfolio_Laptop.png",
+      title: "Portfolio",
+      techs: ["/Nextjs.png", "/MaterialUI.png"],
+      github: "https://github.com/Salman-Inayat/Portfolio",
+      description: "My portfolio website to showcase my skills and projects.",
+    },
+    {
+      name: "/Jahangiri_Laptop.png",
+      title: "Jehangiri Associates",
+      techs: ["/ReactJs.png", "/Bootstrap.png", "/NodeJs.png"],
+      github: "https://github.com/Salman-Inayat/Jehangiri-Associates",
+      description:
+        "Company website for a buiding company developed with Reactjs and Nodejs",
+    },
+    {
       name: "/AtecMart_Laptop.png",
-      title: "Demo App",
-      techs: [
-        "/NodeJs.png",
-        "/HTML.png",
-        "/GIT.png",
-        "/GraphQL.png",
-        "/mongodb.png",
-      ],
-      github: "https://www.github.com",
+      title: "AtecMart",
+      techs: ["/HTML.png", "/CSS.png", "/PHP.png", "/MySQL.png"],
+      github: "https://github.com/Salman-Inayat/PHP-ecommerce-website",
+      description:
+        "An online shopping store developed with PHP and MySQl as database",
     },
     {
-      id: 3,
       name: "/Omnifood_Laptop.png",
-      title: "Jehangiri",
-      techs: ["/JS.png", "/CSS.png"],
-      github: "https://www.github.com",
+      title: "OmniFood",
+      techs: ["/HTML.png", "/Sass.png", "/JS.png"],
+      github: "https://github.com/Salman-Inayat/PHP-ecommerce-website",
+      description:
+        "Company website for Omnifood restaurant developed with Sass styling",
     },
     {
-      id: 4,
-      name: "/Notour_Laptop.png",
-      title: "Demo App",
-      techs: [
-        "/NodeJs.png",
-        "/HTML.png",
-        "/GIT.png",
-        "/GraphQL.png",
-        "/mongodb.png",
-      ],
-      github: "https://www.github.com",
-    },
-    {
-      id: 5,
-      name: "/Nexter_Laptop.png",
-      title: "Demo App",
-      techs: [
-        "/NodeJs.png",
-        "/HTML.png",
-        "/GIT.png",
-        "/GraphQL.png",
-        "/mongodb.png",
-      ],
-      github: "https://www.github.com",
-    },
-    {
-      id: 6,
       name: "/YelpCamp_Laptop.png",
-      title: "Demo App",
+      title: "YelpCamp",
       techs: [
         "/NodeJs.png",
         "/HTML.png",
-        "/GIT.png",
-        "/GraphQL.png",
+        "/CSS.png",
+        "/Expressjs.png",
         "/mongodb.png",
       ],
-      github: "https://www.github.com",
+      github: "https://github.com/Salman-Inayat/YelpCamp",
+      description:
+        "A camping website to explore camping sites for your next adventure",
     },
     {
-      id: 7,
-      name: "/Jehangiri_Laptop.png",
-      title: "Demo App",
-      techs: [
-        "/NodeJs.png",
-        "/HTML.png",
-        "/GIT.png",
-        "/GraphQL.png",
-        "/mongodb.png",
-      ],
-      github: "https://www.github.com",
+      name: "/Nexter_Laptop.png",
+      title: "Nexter",
+      techs: ["/HTML.png", "/Sass.png", "/JS.png"],
+      github: "https://github.com/Salman-Inayat/Nexter",
+      description: "Website where a user can view and buy different properties",
+    },
+    {
+      name: "/Notour_Laptop.png",
+      title: "Notour",
+      techs: ["/HTML.png", "/CSS.png", "/JS.png"],
+      github: "https://github.com/Salman-Inayat/Notour",
+      description:
+        "Explore nature by discovering different tours on the website ",
     },
   ];
 
@@ -194,48 +183,45 @@ const Projects = () => {
       </Grid>
       <Grid item md={12}>
         <div className={styles.card_list}>
-          {data.map((user, i) => (
-            <Fade bottom key={i}>
-              <article className={styles.card}>
-                <header className={styles.card_header}>
-                  <Image
-                    src={user.name}
-                    alt=""
-                    width={450}
-                    height={300}
-                    className={styles.pimage}
-                  />
-                </header>
+          {projects.map((project, i) => (
+            <article className={styles.card} key={i}>
+              <header className={styles.card_header}>
+                <Image
+                  src={project.name}
+                  alt=""
+                  width={450}
+                  height={300}
+                  className={styles.pimage}
+                />
+              </header>
 
-                <div className={styles.content}>
-                  <h2 className={styles.content_title}>{user.title}</h2>
-                  <p className={styles.content_description}>
-                    A platform for automating data collection and reporting
-                    throughout teams, operations and supply chains.
-                  </p>
-                  <Link href={user.github} className={classes.button_link}>
-                    <Button
-                      variant="outlined"
-                      color="primary"
-                      className={local_styles.button}
-                    >
-                      <GitHubIcon className={local_styles.githubIcon} />
-                      GitHub
-                    </Button>
-                  </Link>
-                  <br></br>
-                  {user.techs.map((el, j) => {
-                    return (
-                      <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
-                        <span className={local_styles.tech_images}>
-                          <Image width={40} height={40} alt="" src={el} />
-                        </span>
-                      </CustomizedTooltip>
-                    );
-                  })}
-                </div>
-              </article>
-            </Fade>
+              <div className={styles.content}>
+                <h2 className={styles.content_title}>{project.title}</h2>
+                <p className={styles.content_description}>
+                  {project.description}
+                </p>
+                <Link href={project.github} className={styles.button_link}>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className={local_styles.button}
+                  >
+                    <GitHubIcon className={local_styles.githubIcon} />
+                    GitHub
+                  </Button>
+                </Link>
+                <br></br>
+                {project.techs.map((el, j) => {
+                  return (
+                    <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
+                      <span className={local_styles.tech_images}>
+                        <Image width={40} height={40} alt="" src={el} />
+                      </span>
+                    </CustomizedTooltip>
+                  );
+                })}
+              </div>
+            </article>
           ))}
         </div>
       </Grid>

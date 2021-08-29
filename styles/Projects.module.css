@@ -126,7 +126,7 @@
   .card_list {
     padding: 0px;
     /* flex-direction: column; */
-    /* overflow-x: unset; */
+    overflow-x: unset;
   }
 
   .card_list > :first-child {

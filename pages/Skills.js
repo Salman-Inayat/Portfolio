@@ -98,23 +98,23 @@ const Skills = () => {
   const skills = [
     {
       name: "HTML",
-      percent: "95",
+      percent: "90",
       image: "/HTML.png",
     },
     {
       name: "CSS",
-      percent: "90",
+      percent: "80",
       image: "/CSS.png",
     },
     {
       name: "Javascript",
-      percent: "95",
+      percent: "85",
       image: "/JS.png",
     },
     {
       name: "React.js",
       percent: "80",
-      image: "/reactjs.png",
+      image: "/ReactJs.png",
     },
     {
       name: "Node.js",
@@ -122,39 +122,59 @@ const Skills = () => {
       image: "/NodeJs.png",
     },
     {
-      name: "Mongodb",
+      name: "Next.js",
       percent: "70",
-      image: "/mongodb.png",
+      image: "/Nextjs.png",
     },
     {
-      name: "HTML",
-      percent: "95",
-      image: "/HTML.png",
-    },
-    {
-      name: "CSS",
-      percent: "90",
-      image: "/CSS.png",
-    },
-    {
-      name: "Javascript",
-      percent: "95",
-      image: "/JS.png",
-    },
-    {
-      name: "React.js",
+      name: "Git",
       percent: "80",
-      image: "/reactjs.png",
+      image: "/GIT.png",
     },
     {
-      name: "Node.js",
+      name: "Express.js",
       percent: "70",
-      image: "/NodeJs.png",
+      image: "/Expressjs.png",
+    },
+    {
+      name: "Sass",
+      percent: "80",
+      image: "/Sass.png",
+    },
+    {
+      name: "Material UI",
+      percent: "90",
+      image: "/MaterialUI.png",
+    },
+    {
+      name: "Bootstrap",
+      percent: "90",
+      image: "/Bootstrap.png",
+    },
+    {
+      name: "GraphQL",
+      percent: "60",
+      image: "/GraphQL.png",
+    },
+    {
+      name: "Angular.js",
+      percent: "60",
+      image: "/Angularjs.png",
+    },
+    {
+      name: "PHP",
+      percent: "60",
+      image: "/PHP.png",
     },
     {
       name: "Mongodb",
       percent: "70",
       image: "/mongodb.png",
+    },
+    {
+      name: "MySQL",
+      percent: "70",
+      image: "/MySQL.png",
     },
   ];
 
@@ -207,7 +227,7 @@ const Skills = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.main_grid} spcaing={2}>
+      <Grid container className={classes.main_grid} spacing={2}>
         <Grid item md={12}>
           <Typer text="Skills" />
         </Grid>
