@@ -15,23 +15,23 @@ import Image from "next/image";
 
 const headersData = [
   {
-    label: "Home",
+    label: "<Home/>",
     href: "/",
   },
   {
-    label: "Skills",
+    label: "<Skills/>",
     href: "Skills",
   },
   {
-    label: "Experience",
+    label: "<Experience/>",
     href: "Experience",
   },
   {
-    label: "Projects",
+    label: "<Projects/>",
     href: "Projects",
   },
   {
-    label: "Contact",
+    label: "<Contact/>",
     href: "Contact",
   },
 ];
@@ -77,10 +77,15 @@ const useStyles = makeStyles((theme) => ({
   },
   header_links: {
     color: "rgb(225, 181, 11)",
-    fontsize: "1.3rem",
+
+    fontFamily: "'Handlee', cursive",
+    transition: "all .3s ",
+
     "&:hover": {
       textDecoration: "none",
       borderBottom: "1px solid rgb(225, 181, 11)",
+      transform: "scale(1.1)",
+      backgroundColor: "transparent",
     },
     "&:active": {
       backgroundColor: "rgb(225, 181, 11)",
@@ -88,12 +93,26 @@ const useStyles = makeStyles((theme) => ({
   },
   header_link_text: {
     fontSize: "1.2rem",
+    fontWeight: "bold",
+  },
+  logoText: {
+    fontSize: "3rem",
+    margin: "0px",
+    color: "rgb(225, 181, 11)",
+  },
+  logoLink: {
+    textDecoration: "none",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "none",
+    },
   },
 }));
 
 export default function Header() {
   const classes = useStyles();
 
+  const logoText = "<Salman Inayat/>";
   const [state, setState] = useState({
     mobileView: false,
     drawerOpen: false,
@@ -188,7 +207,10 @@ export default function Header() {
   };
 
   const femmecubatorLogo = (
-    <Image src={"/logo.png"} alt="" width={300} height={60} />
+    // <Image src={"/logo.png"} alt="" width={300} height={60} />
+    <Link href="/" className={classes.logoLink}>
+      <h4 className={classes.logoText}>{logoText}</h4>
+    </Link>
   );
 
   const getMenuButtons = () => {

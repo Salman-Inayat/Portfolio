@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tech_images: {
     marginRight: "10px",
+    borderRadius: "50px",
   },
   card_list: {
     display: "flex",

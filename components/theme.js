@@ -3,7 +3,7 @@ import { red } from "@material-ui/core/colors";
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Ubuntu"],
+    fontFamily: ["Handlee, cursive", "Ubuntu"],
   },
 });
 

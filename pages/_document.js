@@ -11,9 +11,16 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
-            rel="stylesheet"
-            // href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="preload"
             href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Handlee-Regular.ttf"
+            as="font"
+            crossOrigin=""
           />
         </Head>
         <body>
