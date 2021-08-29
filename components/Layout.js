@@ -10,7 +10,9 @@ const Layout = ({ children }) => {
       container
       style={{
         backgroundColor: "#1F2833",
-        height: "height: calc(100% - 110px)",
+        height: "100%",
+        width: "100%",
+        overflowX: "scroll",
       }}
     >
       <Particles

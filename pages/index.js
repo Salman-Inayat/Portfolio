@@ -11,7 +11,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-
+  button_link: {
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
   button: {
     marginBottom: theme.spacing(2),
     borderRadius: "5em",
@@ -54,7 +59,7 @@ function Home() {
   const classes = useStyles();
 
   return (
-    <Grid container style={{ height: "calc(100vh - 100px)" }}>
+    <Grid container style={{ height: "100%", marginTop: "50px" }}>
       <Grid item md={6} className={classes.grid}>
         <object
           type="image/svg+xml"
@@ -81,7 +86,7 @@ function Home() {
             on web
           </h3>
           <div className={classes.button_container}>
-            <Link href="/Salman_Inayat_Resume.pdf" download>
+            <Link href="/Resume.pdf" download className={classes.button_link}>
               <Button
                 variant="outlined"
                 color="primary"
@@ -90,7 +95,7 @@ function Home() {
                 Resume
               </Button>
             </Link>
-            <Link href="Contact">
+            <Link href="Contact" className={classes.button_link}>
               <Button
                 variant="outlined"
                 color="primary"
