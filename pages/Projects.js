@@ -221,7 +221,7 @@ const Projects = () => {
                   return (
                     <CustomizedTooltip title={`${tooltip(el)}`} arrow key={j}>
                       <span className={local_styles.tech_images}>
-                        <img width={40} height={40} alt="" src={el} />
+                        <Image width={40} height={40} alt="" src={el} />
                       </span>
                     </CustomizedTooltip>
                   );
