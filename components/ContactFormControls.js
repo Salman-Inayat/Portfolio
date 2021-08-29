@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const PostContactForm = async (values, successCallback, errorCallback) => {
   // do stuff
@@ -91,6 +92,22 @@ export const useFormControls = () => {
       await PostContactForm(values, handleSuccess, handleError);
       alert("Form Submitted!");
     }
+
+    emailjs
+      .sendForm(
+        "service_ubskslm",
+        "template_i87pfmv",
+        e.target,
+        "user_2QbHpaNDWzpnVwslN3mse"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return {

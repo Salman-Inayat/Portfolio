@@ -147,18 +147,7 @@ const Contact = () => {
                       focused: classes.cssFocused,
                     },
                   }}
-                  // InputLabelProps={{
-                  //   style: {
-                  //     textOverflow: "ellipsis",
-                  //     whiteSpace: "nowrap",
-                  //     overflow: "hidden",
-                  //     width: "100%",
-                  //     color: "white",
-                  //     marginRight: "20px",
-                  //   },
-                  // }}
                   autoComplete="none"
-                  // className={classes.textfield}
                   {...(errors[inputFieldValue.name] && {
                     error: true,
                     helperText: errors[inputFieldValue.name],
