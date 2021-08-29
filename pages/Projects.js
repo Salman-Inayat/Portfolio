@@ -69,6 +69,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "250px",
     padding: "1.5rem",
   },
+  button_link: {
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
 }));
 
 const useStylesBootstrap = makeStyles((theme) => ({
@@ -207,7 +213,7 @@ const Projects = () => {
                     A platform for automating data collection and reporting
                     throughout teams, operations and supply chains.
                   </p>
-                  <Link href={user.github}>
+                  <Link href={user.github} className={classes.button_link}>
                     <Button
                       variant="outlined"
                       color="primary"
