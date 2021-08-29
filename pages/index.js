@@ -30,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgb(225, 181, 11)",
       color: "black",
     },
+    [theme.breakpoints.down("sm")]: {
+      "&:focus": {
+        backgroundColor: "rgb(225, 181, 11)",
+        color: "black",
+      },
+    },
   },
   content_container: {
     textAlign: "left",
@@ -56,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
   techtext: {
     color: "#e1b50b",
+    fontWeight: "bold",
   },
   gif: {
     zIndex: "2000",

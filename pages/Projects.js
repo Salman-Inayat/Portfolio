@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgb(225, 181, 11)",
       color: "black",
     },
+    [theme.breakpoints.down("sm")]: {
+      "&:focus": {
+        backgroundColor: "rgb(225, 181, 11)",
+        color: "black",
+      },
+    },
   },
   githubIcon: {
     marginRight: ".2rem",
@@ -186,12 +192,12 @@ const Projects = () => {
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
-                <img
+                <Image
                   src={project.name}
                   alt=""
-                  width={450}
-                  height={300}
-                  className={styles.pimage}
+                  width={300}
+                  height={200}
+                  // className={styles.pimage}
                 />
               </header>
 

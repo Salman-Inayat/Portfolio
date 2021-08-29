@@ -1,7 +1,3 @@
-// module.exports = {
-//   reactStrictMode: true,
-// };
-
 // next.config.js
 const withPlugins = require("next-compose-plugins");
 const withOptimizedImages = require("next-optimized-images");

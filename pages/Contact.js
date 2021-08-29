@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgb(225, 181, 11)",
       color: "black",
     },
+    [theme.breakpoints.down("sm")]: {
+      "&:focus": {
+        backgroundColor: "rgb(225, 181, 11)",
+        color: "black",
+      },
+    },
   },
   form_container: {
     padding: theme.spacing(10),
