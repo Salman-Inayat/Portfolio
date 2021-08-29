@@ -110,8 +110,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px",
     color: "rgb(225, 181, 11)",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
-      margin: "10px 0px 10px 20px",
+      fontSize: "1.9rem",
+      margin: "10px 0px",
     },
   },
   logoLink: {
