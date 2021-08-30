@@ -79,13 +79,6 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
     },
   },
-  hiddenText: {
-    display: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "inline-block",
-      color: "red",
-    },
-  },
 }));
 
 const useStylesBootstrap = makeStyles((theme) => ({
@@ -191,7 +184,6 @@ const Projects = () => {
     <Grid container className={styles.grid_container}>
       <Grid item md={12}>
         <Typer text="Projects" />
-        <h3 className={styles.hiddenText}>Swipe to the left</h3>
       </Grid>
       <Grid item md={12}>
         <div className={styles.card_list}>

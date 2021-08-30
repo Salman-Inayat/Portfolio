@@ -74,9 +74,10 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiFormLabel-root": {
       color: "rgb(214, 173, 12)",
     },
+    // "&:focus": {},
   },
 
-  cssFocused: {},
+  cssFocused: { borderRadius: "10px 10px 3px 3px" },
   gif: {
     height: "85%",
   },
@@ -131,7 +132,6 @@ const Contact = () => {
               return (
                 <TextField
                   key={index}
-                  // onBlur={handleInputValue}
                   onChange={handleInputValue}
                   fullWidth
                   name={inputFieldValue.name}

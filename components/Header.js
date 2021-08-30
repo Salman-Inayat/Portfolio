@@ -75,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   header_links: {
-    color: "rgb(225, 181, 11)",
     fontFamily: "'Handlee', cursive",
     transition: "all .3s ",
     "&:hover": {
@@ -89,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header_link_text: {
+    color: "rgb(225, 181, 11)",
     fontSize: "1.2rem",
     fontWeight: "bold",
   },
@@ -101,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawer_link_text: {
+    color: "rgb(225, 181, 11)",
     fontSize: "1.2rem",
     fontWeight: "bold",
     margin: "15px 0px",
