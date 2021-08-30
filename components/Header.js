@@ -175,7 +175,9 @@ export default function Header() {
     return (
       <Toolbar className={classes.toolbar}>
         {femmecubatorLogo}
-        <div className={classes.linkContainer}>{getMenuButtons()}</div>
+        <div className={classes.linkContainer} role="menuitemlist">
+          {getMenuButtons()}
+        </div>
       </Toolbar>
     );
   };

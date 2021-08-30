@@ -84,7 +84,7 @@ function Home() {
           height={400}
           width={400}
           className={classes.gif}
-          alt=""
+          alt="landing"
         >
           svg-animation
         </object>
@@ -132,8 +132,6 @@ function Home() {
             </div>
           </div>
         </Fade>
-
-        {/* <Typer text="/About" /> */}
       </Grid>
     </Grid>
   );

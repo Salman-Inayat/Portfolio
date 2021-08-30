@@ -120,7 +120,7 @@ const Contact = () => {
           height={400}
           width={400}
           className={classes.gif}
-          alt=""
+          alt="contact"
         >
           svg-animation
         </object>
