@@ -147,7 +147,7 @@
   }
 }
 
-@media screen and (min-width: 1020px) {
+/* @media screen and (min-width: 1280px) {
   .grid_container {
     height: 100vh;
     margin: 50px 0px;
@@ -170,4 +170,4 @@
     font-weight: 400;
     letter-spacing: 1px;
   }
-}
+} */

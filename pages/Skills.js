@@ -44,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    [theme.breakpoints.up("xl")]: {
-      height: "180px",
-      textAlign: "center",
-      width: "180px",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   height: "180px",
+    //   textAlign: "center",
+    //   width: "180px",
+    // },
   },
   card: {
     width: "100%",
@@ -75,9 +75,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       marginTop: "-10px",
     },
-    [theme.breakpoints.up("md")]: {
-      border: "2px solid rgb(225, 181, 11)",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   border: "2px solid rgb(225, 181, 11)",
+    // },
   },
   card__header: {
     textTransform: "uppercase",

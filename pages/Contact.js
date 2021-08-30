@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
     },
-    [theme.breakpoints.up("md")]: {
-      height: "95vh",
-      margin: "50px 0px",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   height: "95vh",
+    //   margin: "50px 0px",
+    // },
   },
   button: {
     width: theme.spacing(20),
@@ -46,12 +46,12 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
-    [theme.breakpoints.up("md")]: {
-      width: "250px",
-      height: " 50px",
-      fontSize: "1.3rem",
-      border: "2px solid rgb(225, 181, 11)",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   width: "250px",
+    //   height: " 50px",
+    //   fontSize: "1.3rem",
+    //   border: "2px solid rgb(225, 181, 11)",
+    // },
   },
   form_container: {
     padding: theme.spacing(10),
@@ -68,24 +68,24 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: "1px",
     borderRadius: "10px 10px 3px 3px",
     borderColor: "rgb(214, 173, 12) !important",
-    [theme.breakpoints.up("md")]: {
-      borderWidth: "2px",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   borderWidth: "2px",
+    // },
   },
   cssLabel: {
     color: "rgba(202, 195, 195, 0.87)",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2rem",
+    // },
   },
   cssOutlinedInput: {
     color: "rgb(225, 181, 11)",
     "&$cssFocused $notchedOutline": {
       borderColor: "rgb(214, 173, 12) !important",
     },
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2rem",
+    // },
   },
   root: {
     backgroundColor: "rgb(83, 86, 91)",
@@ -100,10 +100,10 @@ const useStyles = makeStyles((theme) => ({
   cssFocused: { borderRadius: "10px 10px 3px 3px" },
   gif: {
     height: "85%",
-    [theme.breakpoints.up("md")]: {
-      height: "120%",
-      width: "60%",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   height: "120%",
+    //   width: "60%",
+    // },
   },
 }));
 

@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
-    [theme.breakpoints.up("md")]: {
-      width: "200px",
-      height: " 50px",
-      fontSize: "1.3rem",
-      border: "2px solid rgb(225, 181, 11)",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   width: "200px",
+    //   height: " 50px",
+    //   fontSize: "1.3rem",
+    //   border: "2px solid rgb(225, 181, 11)",
+    // },
   },
   githubIcon: {
     marginRight: ".2rem",
@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   card_header: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("lg")]: {
       height: "400px",
     },
   },
@@ -100,7 +100,7 @@ const useStylesBootstrap = makeStyles((theme) => ({
     backgroundColor: "rgb(225, 181, 11)",
     color: "black",
     fontWeight: "bold",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("lg")]: {
       fontSize: "1.2rem",
     },
   },

@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
   grid_container: {
     height: "100%",
     marginTop: "50px",
-    [theme.breakpoints.up("lg")]: {
-      height: "calc(100vh - 150px)",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   height: "calc(100vh - 150px)",
+    // },
   },
   grid: {
     display: "flex",
@@ -43,12 +43,12 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
-    [theme.breakpoints.up("md")]: {
-      width: "200px",
-      height: " 50px",
-      fontSize: "1.3rem",
-      border: "2px solid rgb(225, 181, 11)",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   width: "200px",
+    //   height: " 50px",
+    //   fontSize: "1.3rem",
+    //   border: "2px solid rgb(225, 181, 11)",
+    // },
   },
   content_container: {
     textAlign: "left",
@@ -61,26 +61,26 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem",
     fontWeight: "400",
     margin: "10px 0px",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2.5rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2.5rem",
+    // },
   },
   text2: {
     fontSize: "3rem",
     fontWeight: "500",
     margin: "0px",
     color: "#e1b50b",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "4rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "4rem",
+    // },
   },
   text3: {
     fontSize: "1.4rem",
     fontWeight: "400",
     letterSpacing: "2px",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2rem",
+    // },
   },
   techtext: {
     color: "#e1b50b",
@@ -93,10 +93,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "85%",
     },
-    [theme.breakpoints.up("md")]: {
-      height: "120%",
-      width: "60%",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   height: "120%",
+    //   width: "60%",
+    // },
   },
 }));
 

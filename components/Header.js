@@ -91,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(225, 181, 11)",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2rem",
+    // },
   },
   drawer_links: {
     color: "rgb(225, 181, 11)",
@@ -108,9 +108,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2rem",
     fontWeight: "bold",
     margin: "15px 0px",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "2rem",
+    // },
   },
   logoText: {
     fontSize: "3rem",
@@ -121,9 +121,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.9rem",
       margin: "10px 0px",
     },
-    [theme.breakpoints.up("md")]: {
-      fontSize: "4rem",
-    },
+    // [theme.breakpoints.up("md")]: {
+    //   fontSize: "4rem",
+    // },
   },
   logoLink: {
     textDecoration: "none",
