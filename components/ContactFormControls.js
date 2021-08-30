@@ -35,10 +35,6 @@ export const useFormControls = () => {
           : "Email is not valid.";
     }
 
-    // if ("subject" in fieldValues)
-    //   temp.subject =
-    //     fieldValues.subject.length !== 0 ? "" : "This field is required.";
-
     if ("message" in fieldValues)
       temp.message =
         fieldValues.message.length !== 0 ? "" : "Message is required.";
@@ -77,7 +73,6 @@ export const useFormControls = () => {
     const isValid =
       fieldValues.fullName &&
       fieldValues.email &&
-      // fieldValues.subject &&
       fieldValues.message &&
       Object.values(errors).every((x) => x === "");
 

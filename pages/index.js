@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
+import Link from "next/link";
 import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
@@ -84,6 +84,7 @@ function Home() {
           height={400}
           width={400}
           className={classes.gif}
+          alt=""
         >
           svg-animation
         </object>
@@ -98,14 +99,19 @@ function Home() {
           <div className={classes.content_container}>
             <h3 className={classes.text1}>HI THERE I'M, </h3>
             <h1 className={classes.text2}>SALMAN INAYAT</h1>
-            <h3 className={classes.text3}>
+            <h2 className={classes.text3}>
               A{" "}
               <span className={classes.techtext}>Full-Stack Web Developer</span>{" "}
               passionate about creating interactive applications and experiences
               on web
-            </h3>
+            </h2>
             <div className={classes.button_container}>
-              <Link href="/Resume.pdf" download className={classes.button_link}>
+              <Link
+                href="/Resume.pdf"
+                download
+                passHref
+                className={classes.button_link}
+              >
                 <Button
                   variant="outlined"
                   color="primary"
@@ -114,7 +120,7 @@ function Home() {
                   Resume
                 </Button>
               </Link>
-              <Link href="Contact" className={classes.button_link}>
+              <Link href="Contact" passHref className={classes.button_link}>
                 <Button
                   variant="outlined"
                   color="primary"

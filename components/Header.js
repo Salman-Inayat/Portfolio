@@ -1,17 +1,14 @@
 import {
   AppBar,
   Toolbar,
-  Typography,
   makeStyles,
-  Button,
   IconButton,
   Drawer,
-  Link,
   MenuItem,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Link from "next/link";
 
 const headersData = [
   {
@@ -220,7 +217,12 @@ export default function Header() {
   const getDrawerChoices = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.href} key={i} className={classes.drawer_links}>
+        <Link
+          href={data.href}
+          key={i}
+          passHref
+          className={classes.drawer_links}
+        >
           <MenuItem className={classes.drawer_link_text}>{data.label}</MenuItem>
         </Link>
       );
@@ -228,7 +230,7 @@ export default function Header() {
   };
 
   const femmecubatorLogo = (
-    <Link href="/" className={classes.logoLink}>
+    <Link href="/" passHref className={classes.logoLink}>
       <h4 className={classes.logoText}>{logoText}</h4>
     </Link>
   );
@@ -236,7 +238,12 @@ export default function Header() {
   const getMenuButtons = () => {
     return headersData.map((data, i) => {
       return (
-        <Link href={data.href} key={i} className={classes.header_links}>
+        <Link
+          href={data.href}
+          key={i}
+          passHref
+          className={classes.header_links}
+        >
           <MenuItem className={classes.header_link_text}>{data.label}</MenuItem>
         </Link>
       );

@@ -125,7 +125,6 @@
 
   .card_list {
     padding: 0px;
-    /* flex-direction: column; */
     overflow-x: unset;
   }
 

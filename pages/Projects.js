@@ -1,15 +1,13 @@
 import React from "react";
-import cx from "clsx";
-import { Grid, Link } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import Link from "next/link";
 import Image from "next/image";
 import Button from "@material-ui/core/Button";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import styles from "../styles/Projects.module.css";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typer from "../components/Typer";
-import Fade from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -79,6 +77,13 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:hover": {
       textDecoration: "none",
+    },
+  },
+  hiddenText: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "inline-block",
+      color: "red",
     },
   },
 }));
@@ -186,19 +191,14 @@ const Projects = () => {
     <Grid container className={styles.grid_container}>
       <Grid item md={12}>
         <Typer text="Projects" />
+        <h3 className={styles.hiddenText}>Swipe to the left</h3>
       </Grid>
       <Grid item md={12}>
         <div className={styles.card_list}>
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
-                <Image
-                  src={project.name}
-                  alt=""
-                  width={300}
-                  height={200}
-                  // className={styles.pimage}
-                />
+                <Image src={project.name} alt="" width={300} height={200} />
               </header>
 
               <div className={styles.content}>
@@ -206,7 +206,11 @@ const Projects = () => {
                 <p className={styles.content_description}>
                   {project.description}
                 </p>
-                <Link href={project.github} className={styles.button_link}>
+                <Link
+                  href={project.github}
+                  passHref
+                  className={styles.button_link}
+                >
                   <Button
                     variant="outlined"
                     color="primary"

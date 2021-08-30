@@ -119,6 +119,7 @@ const Contact = () => {
           height={400}
           width={400}
           className={classes.gif}
+          alt=""
         >
           svg-animation
         </object>
@@ -166,7 +167,6 @@ const Contact = () => {
               onSubmit={handleInputValue}
               type="submit"
               color="primary"
-              // disabled={!formIsValid()}
               className={classes.button}
             >
               Send Message

@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     background: "rgb(83, 86, 91)",
     borderRadius: "10px",
-    // boxShadow: "25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f",
     [theme.breakpoints.down("sm")]: {
       height: "90%",
     },
@@ -71,9 +70,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     padding: "40px 20px 20px 20px",
     border: "1px solid rgb(225, 181, 11)",
-
     cursor: "pointer",
-    // boxShadow: "6px 16px 44px #0a0a0a, -16px -16px 44px #282a28",
     transition: "0.3s all ease-in-out",
     "&:hover": {
       marginTop: "-10px",

@@ -10,25 +10,20 @@ import "../styles/globals.css";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
     <React.Fragment>
       <Head>
-        <title>Portfolio</title>
+        <title>Salman Inayat</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta
+          name="description"
+          content="Salman Inayat is a full stack web developer who loves working with Reactjs and Nodejs."
+        />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />
