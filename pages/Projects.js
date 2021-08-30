@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
+    [theme.breakpoints.up("md")]: {
+      width: "200px",
+      height: " 50px",
+      fontSize: "1.3rem",
+    },
   },
   githubIcon: {
     marginRight: ".2rem",
@@ -77,6 +82,11 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:hover": {
       textDecoration: "none",
+    },
+  },
+  card_header: {
+    [theme.breakpoints.up("md")]: {
+      height: "400px",
     },
   },
 }));
@@ -192,7 +202,6 @@ const Projects = () => {
               <header className={styles.card_header}>
                 <Image src={project.name} alt="" width={300} height={200} />
               </header>
-
               <div className={styles.content}>
                 <h2 className={styles.content_title}>{project.title}</h2>
                 <p className={styles.content_description}>

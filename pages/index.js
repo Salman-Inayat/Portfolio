@@ -6,6 +6,13 @@ import Link from "next/link";
 import Fade from "react-reveal/Fade";
 
 const useStyles = makeStyles((theme) => ({
+  grid_container: {
+    height: "100%",
+    marginTop: "50px",
+    [theme.breakpoints.up("lg")]: {
+      height: "calc(100vh - 150px)",
+    },
+  },
   grid: {
     display: "flex",
     justifyContent: "center",
@@ -36,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
+    [theme.breakpoints.up("md")]: {
+      width: "200px",
+      height: " 50px",
+      fontSize: "1.3rem",
+    },
   },
   content_container: {
     textAlign: "left",
@@ -48,17 +60,26 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem",
     fontWeight: "400",
     margin: "10px 0px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "2.5rem",
+    },
   },
   text2: {
     fontSize: "3rem",
     fontWeight: "500",
     margin: "0px",
     color: "#e1b50b",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "4rem",
+    },
   },
   text3: {
     fontSize: "1.4rem",
     fontWeight: "400",
     letterSpacing: "2px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "2rem",
+    },
   },
   techtext: {
     color: "#e1b50b",
@@ -66,8 +87,14 @@ const useStyles = makeStyles((theme) => ({
   },
   gif: {
     zIndex: "2000",
+    height: "400px",
+    width: "400px",
     [theme.breakpoints.down("sm")]: {
       height: "85%",
+    },
+    [theme.breakpoints.up("md")]: {
+      height: "120%",
+      width: "60%",
     },
   },
 }));
@@ -76,7 +103,7 @@ function Home() {
   const classes = useStyles();
 
   return (
-    <Grid container style={{ height: "100%", marginTop: "50px" }}>
+    <Grid container className={classes.grid_container}>
       <Grid item md={6} className={classes.grid}>
         <object
           type="image/svg+xml"

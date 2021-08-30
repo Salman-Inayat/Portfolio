@@ -78,3 +78,10 @@
     font-size: 1.6rem;
   }
 }
+
+@media screen and (min-width: 1020px) {
+  .text {
+    margin: 100px 1.8rem;
+    font-size: 2rem;
+  }
+}

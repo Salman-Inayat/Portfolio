@@ -11,7 +11,7 @@ import Grid from "@material-ui/core/Grid";
 
 const data = [
   {
-    title: "Research Assistant",
+    title: "Web Developer",
     subtitle: "IoT Lab SEECS, NUST",
     description:
       "Working on a government funded project to detect rust disease in wheat leaves and developing a web portal to visualize the data.",
