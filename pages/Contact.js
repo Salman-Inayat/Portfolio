@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
       width: "250px",
       height: " 50px",
       fontSize: "1.3rem",
+      border: "2px solid rgb(225, 181, 11)",
     },
   },
   form_container: {
@@ -67,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: "1px",
     borderRadius: "10px 10px 3px 3px",
     borderColor: "rgb(214, 173, 12) !important",
+    [theme.breakpoints.up("md")]: {
+      borderWidth: "2px",
+    },
   },
   cssLabel: {
     color: "rgba(202, 195, 195, 0.87)",

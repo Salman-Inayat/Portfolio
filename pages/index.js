@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
       width: "200px",
       height: " 50px",
       fontSize: "1.3rem",
+      border: "2px solid rgb(225, 181, 11)",
     },
   },
   content_container: {

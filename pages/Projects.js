@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
       width: "200px",
       height: " 50px",
       fontSize: "1.3rem",
+      border: "2px solid rgb(225, 181, 11)",
     },
   },
   githubIcon: {
@@ -99,6 +100,9 @@ const useStylesBootstrap = makeStyles((theme) => ({
     backgroundColor: "rgb(225, 181, 11)",
     color: "black",
     fontWeight: "bold",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.2rem",
+    },
   },
 }));
 

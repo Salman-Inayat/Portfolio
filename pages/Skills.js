@@ -75,6 +75,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       marginTop: "-10px",
     },
+    [theme.breakpoints.up("md")]: {
+      border: "2px solid rgb(225, 181, 11)",
+    },
   },
   card__header: {
     textTransform: "uppercase",
