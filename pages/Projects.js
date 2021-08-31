@@ -99,10 +99,12 @@ const useStylesBootstrap = makeStyles((theme) => ({
   tooltip: {
     backgroundColor: "rgb(225, 181, 11)",
     color: "black",
+    fontSize: "0.9rem",
+
     fontWeight: "bold",
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "1.2rem",
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   fontSize: "1.2rem",
+    // },
   },
 }));
 

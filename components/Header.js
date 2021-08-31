@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   header1: {
     backgroundColor: "transparent",
     boxShadow: "none",
-    padding: "20px 79px 20px 50px",
+    padding: "1rem 3rem 0.5rem 3rem",
     "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   header2: {
     backgroundColor: "#1F2833",
 
-    padding: "20px 79px 20px 50px",
+    padding: "1rem 3rem 0.5rem 3rem",
     "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   logoText: {
-    fontSize: "3rem",
+    fontSize: "2.6rem",
     margin: "0px",
     cursor: "pointer",
     color: "rgb(225, 181, 11)",

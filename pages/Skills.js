@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     [theme.breakpoints.down("sm")]: {
       width: "100vw",
-      padding: "10px",
+      padding: "10px 10px 10px 1.5rem",
     },
   },
   card_grid: {
