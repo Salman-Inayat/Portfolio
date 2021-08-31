@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core";
 import Header from "./Header";
 import Particles from "react-particles-js";
 import particlesConfig from "../public/particlesConfig";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
       </Grid>
+      <Footer />
     </Grid>
   );
 };
