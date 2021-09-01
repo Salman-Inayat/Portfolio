@@ -64,7 +64,6 @@ function Footer() {
         >
           <Image src="/facebook.png" alt="Facebook" width={48} height={48} />
         </a>
-
         <a
           href="https://twitter.com/SalmanInayat5"
           className={classes.link}
