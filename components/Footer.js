@@ -72,6 +72,9 @@ function Footer() {
         >
           <Image src="/twitter.png" alt="Twitter" width={48} height={48} />
         </a>
+        <a href="mailto:salmaninayat1999@gmail.com">
+          <Image width={48} height={48} src="/mail.png" alt="mail" />
+        </a>
       </Grid>
       <Grid item md={12} xs={12} sm={12}>
         <h3 className={classes.copyrightText}>
