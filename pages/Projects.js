@@ -213,9 +213,11 @@ const Projects = () => {
                 <p className={styles.content_description}>
                   {project.description}
                 </p>
-                <Link
+                <a
                   href={project.github}
-                  passHref
+                  // passHref
+                  target="_blank"
+                  rel="noreferrer"
                   className={styles.button_link}
                 >
                   <Button
@@ -226,7 +228,7 @@ const Projects = () => {
                     <GitHubIcon className={local_styles.githubIcon} />
                     GitHub
                   </Button>
-                </Link>
+                </a>
                 <br></br>
                 {project.techs.map((el, j) => {
                   return (

@@ -134,11 +134,13 @@ function Home() {
               on web
             </h2>
             <div className={classes.button_container}>
-              <Link
+              <a
                 href="/Resume.pdf"
-                download
-                passHref
-                className={classes.button_link}
+                // download
+                // passHref
+                target="_blank"
+                rel="noreferrer"
+                // className={classes.button_link}
               >
                 <Button
                   variant="outlined"
@@ -147,7 +149,7 @@ function Home() {
                 >
                   Resume
                 </Button>
-              </Link>
+              </a>
               <Link href="Contact" passHref className={classes.button_link}>
                 <Button
                   variant="outlined"
