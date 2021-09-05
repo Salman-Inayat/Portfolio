@@ -2,7 +2,6 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
