@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexWrap: "nowrap",
+    flexDirection: "column",
   },
   githubIcon: {
     color: "#fff",
