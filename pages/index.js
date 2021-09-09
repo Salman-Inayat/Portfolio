@@ -125,7 +125,7 @@ function Home() {
       >
         <Fade bottom>
           <div className={classes.content_container}>
-            <h3 className={classes.text1}>HI THERE I'M, </h3>
+            <h3 className={classes.text1}>HI THERE <Image src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width={30}> I'M, </h3>
             <h1 className={classes.text2}>SALMAN INAYAT</h1>
             <h2 className={classes.text3}>
               A{" "}
