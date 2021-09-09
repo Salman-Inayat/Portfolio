@@ -126,8 +126,8 @@ function Home() {
       >
         <Fade bottom>
           <div className={classes.content_container}>
-            <h3 className={classes.text1}>HI THERE<span><img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="40" height="40" alt="Picture of the author"/></span> I'M, </h3>
-            <h1 className={classes.text2}>SALMAN INAYAT</h1>
+            <h3 className={classes.text1}>HI THERE  <span><img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="40" height="40" alt="Hello"/></span>  </h3>
+            <h1 className={classes.text2}><span className={classes.text1}>I'M </span> SALMAN INAYAT</h1>
             <h2 className={classes.text3}>
               A{" "}
               <span className={classes.techtext}>Full-Stack Web Developer</span>{" "}
