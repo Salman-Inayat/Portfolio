@@ -62,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem",
     fontWeight: "400",
     margin: "10px 0px",
+    color:'white',
     // [theme.breakpoints.up("lg")]: {
     //   fontSize: "2.5rem",
     // },
