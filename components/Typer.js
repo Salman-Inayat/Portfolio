@@ -13,7 +13,7 @@ const Typer = (props) => {
   React.useEffect(() => {
     const options = {
       strings: [props.text],
-      typeSpeed: 150,
+      typeSpeed: 100,
       showCursor: false,
     };
 
