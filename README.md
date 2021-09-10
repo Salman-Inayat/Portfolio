@@ -1,7 +1,10 @@
-This is Portfolio Website developed with Next.js and Material UI. 
+This is my portfolio website developed with Next.js and Material UI.
 
 View my portfolio at [https://salmaninayat.vercel.app](https://salmaninayat.vercel.app)
-<!-- 
+
+Feel free to use this template for your portfolio website.
+
+<!--
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
