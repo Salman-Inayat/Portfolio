@@ -141,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
   const classes = useStyles();
 
-  const logoText = "<Salman Inayat/>";
+  const logoText = "< Salman Inayat />";
   const [state, setState] = useState({
     mobileView: false,
     drawerOpen: false,

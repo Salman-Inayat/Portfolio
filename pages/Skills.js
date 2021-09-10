@@ -14,7 +14,7 @@ import Fade from "react-reveal";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: "50px",
+    marginTop: "20px",
     color: "white",
     [theme.breakpoints.down("sm")]: {
       marginTop: "50px",

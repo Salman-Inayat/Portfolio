@@ -41,7 +41,7 @@ const data = [
 
 const Experience = () => {
   return (
-    <Grid className={classes.container} container>
+    <Grid className={classes.container}>
       <Grid item md={12}>
         <Typer text="Experience" />
       </Grid>
