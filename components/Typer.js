@@ -28,13 +28,13 @@ const Typer = (props) => {
   }, []);
 
   return (
-    <Fade left>
-      <div className={classes.wrap}>
-        <div className="type-wrap">
-          <span className={classes.text} ref={el} />
-        </div>
+    // <Fade left>
+    <div className={classes.wrap}>
+      <div className="type-wrap">
+        <span className={classes.text} ref={el} />
       </div>
-    </Fade>
+    </div>
+    // </Fade>
   );
 };
 
