@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   grid_container: {
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem",
     fontWeight: "400",
     margin: "10px 0px",
+    color:'white',
     // [theme.breakpoints.up("lg")]: {
     //   fontSize: "2.5rem",
     // },
@@ -125,8 +127,8 @@ function Home() {
       >
         <Fade bottom>
           <div className={classes.content_container}>
-            <h3 className={classes.text1}>HI THERE I'M, </h3>
-            <h1 className={classes.text2}>SALMAN INAYAT</h1>
+            <h3 className={classes.text1}>HI THERE  <span><img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="40" height="40" alt="Hello"/></span>  </h3>
+            <h1 className={classes.text2}><span className={classes.text1}>I'M </span> SALMAN INAYAT</h1>
             <h2 className={classes.text3}>
               A{" "}
               <span className={classes.techtext}>Full-Stack Web Developer</span>{" "}
