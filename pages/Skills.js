@@ -190,7 +190,7 @@ const Skills = () => {
                   <AnimatedProgressProvider
                     valueStart={0}
                     valueEnd={value}
-                    duration={1.4}
+                    duration={1.1}
                     easingFunction={easeQuadInOut}
                   >
                     {(value) => {
