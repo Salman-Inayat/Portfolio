@@ -206,7 +206,13 @@ const Projects = () => {
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
-                <Image src={project.name} alt="" width={300} height={200} />
+                <Image
+                  src={project.name}
+                  alt=""
+                  width={300}
+                  height={200}
+                  placeholder="blur"
+                />
               </header>
               <div className={styles.content}>
                 <h2 className={styles.content_title}>{project.title}</h2>
