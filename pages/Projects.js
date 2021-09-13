@@ -8,6 +8,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import styles from "../styles/Projects.module.css";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typer from "../components/Typer";
+import Zoom from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -206,13 +207,15 @@ const Projects = () => {
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
-                <Image
-                  src={project.name}
-                  alt=""
-                  width={300}
-                  height={200}
-                  placeholder="blur"
-                />
+                <Zoom>
+                  <Image
+                    src={project.name}
+                    alt=""
+                    width={300}
+                    height={200}
+                    placeholder="blur"
+                  />
+                </Zoom>
               </header>
               <div className={styles.content}>
                 <h2 className={styles.content_title}>{project.title}</h2>
