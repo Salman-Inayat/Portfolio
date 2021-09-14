@@ -236,7 +236,14 @@ export default function Header() {
           passHref
           className={classes.drawer_links}
         >
-          <MenuItem className={classes.drawer_link_text}>{data.label}</MenuItem>
+          <MenuItem
+            className={classes.drawer_link_text}
+            onClick={() =>
+              setState((prevState) => ({ ...prevState, drawerOpen: false }))
+            }
+          >
+            {data.label}
+          </MenuItem>
         </Link>
       );
     });
