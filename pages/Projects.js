@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
@@ -187,6 +187,24 @@ const Projects = () => {
     },
   ];
 
+  const [mobileView, setmobileView] = useState(false);
+
+  useEffect(() => {
+    const setResponsiveness = () => {
+      return window.innerWidth < 600
+        ? setmobileView(true)
+        : setmobileView(false);
+    };
+
+    setResponsiveness();
+
+    window.addEventListener("resize", () => setResponsiveness());
+
+    return () => {
+      window.removeEventListener("resize", () => setResponsiveness());
+    };
+  }, []);
+
   const local_styles = useStyles();
   let tooltip_text = "";
 
@@ -202,19 +220,20 @@ const Projects = () => {
       <Grid item md={12}>
         <Typer text="Projects" />
       </Grid>
+      {mobileView && (
+        <Grid item md={12} sm={12} xs={12}>
+          <h2 style={{ marginLeft: "1rem" }}>
+            Swipe to the left to view projects
+          </h2>
+        </Grid>
+      )}
       <Grid item md={12}>
         <div className={styles.card_list}>
           {projects.map((project, i) => (
             <article className={styles.card} key={i}>
               <header className={styles.card_header}>
                 <Zoom>
-                  <Image
-                    src={project.name}
-                    alt=""
-                    width={300}
-                    height={200}
-                    placeholder="blur"
-                  />
+                  <Image src={project.name} alt="" width={300} height={200} />
                 </Zoom>
               </header>
               <div className={styles.content}>
