@@ -89,11 +89,14 @@ const useStyles = makeStyles((theme) => ({
   },
   header_link_text: {
     color: "rgb(225, 181, 11)",
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     fontWeight: "bold",
-    // [theme.breakpoints.up("lg")]: {
-    //   fontSize: "2rem",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.3rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "2rem",
+    },
   },
   drawer_links: {
     color: "rgb(225, 181, 11)",
@@ -108,9 +111,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2rem",
     fontWeight: "bold",
     margin: "15px 0px",
-    // [theme.breakpoints.up("lg")]: {
-    //   fontSize: "2rem",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      // fontSize: "1.5rem",
+    },
   },
   logoText: {
     fontSize: "2.6rem",
@@ -122,8 +125,14 @@ const useStyles = makeStyles((theme) => ({
       margin: "10px 0px",
     },
     // [theme.breakpoints.up("md")]: {
-    //   fontSize: "4rem",
+    //   fontSize: "3rem",
     // },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "3rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "4rem",
+    },
   },
   logoLink: {
     textDecoration: "none",
