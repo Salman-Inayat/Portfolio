@@ -31,7 +31,7 @@ const data = [
     date: "November, 2020 - February, 2021",
   },
   {
-    title: "Front End Web Developer Intern",
+    title: "Front End Web Developer",
     subtitle: "Hactric Solutions",
     description:
       "Developed websites for the clients and improved existing software",
