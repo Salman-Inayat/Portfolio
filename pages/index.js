@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
   grid_container: {
     height: "100%",
     marginTop: "50px",
-    // [theme.breakpoints.up("lg")]: {
-    //   height: "calc(100vh - 150px)",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      height: "calc(100vh - 150px)",
+    },
   },
   grid: {
     display: "flex",
@@ -44,12 +44,18 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
       },
     },
-    // [theme.breakpoints.up("lg")]: {
-    //   width: "200px",
-    //   height: " 50px",
-    //   fontSize: "1.3rem",
-    //   border: "2px solid rgb(225, 181, 11)",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      width: "170px",
+      height: " 50px",
+      fontSize: "1.1rem",
+      border: "2px solid rgb(225, 181, 11)",
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "220px",
+      height: " 70px",
+      fontSize: "1.4rem",
+      border: "2px solid rgb(225, 181, 11)",
+    },
   },
   content_container: {
     textAlign: "left",
@@ -63,18 +69,24 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     margin: "10px 0px",
     color: "white",
-    // [theme.breakpoints.up("lg")]: {
-    //   fontSize: "2.5rem",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.7rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "2.5rem",
+    },
   },
   text2: {
     fontSize: "3rem",
     fontWeight: "500",
     margin: "0px",
     color: "#e1b50b",
-    // [theme.breakpoints.up("lg")]: {
-    //   fontSize: "4rem",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "3.1rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "4rem",
+    },
     [theme.breakpoints.down("sm")]: {
       fontSize: "2.2rem",
     },
@@ -83,9 +95,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.4rem",
     fontWeight: "400",
     letterSpacing: "2px",
-    // [theme.breakpoints.up("lg")]: {
-    //   fontSize: "2rem",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.9rem",
+    },
   },
   techtext: {
     color: "#e1b50b",
@@ -98,10 +113,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "85%",
     },
-    // [theme.breakpoints.up("lg")]: {
-    //   height: "120%",
-    //   width: "60%",
-    // },
+    [theme.breakpoints.up("lg")]: {
+      height: "110%",
+      width: "60%",
+    },
+    [theme.breakpoints.up("xl")]: {
+      height: "130%",
+      width: "70%",
+    },
   },
 }));
 
