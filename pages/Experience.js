@@ -11,11 +11,18 @@ import Grid from "@material-ui/core/Grid";
 
 const data = [
   {
+    title: "Associate Software Engineer",
+    subtitle: "Innovage.io",
+    description:
+      "Working with international clients by providing services and managing marketplace APIs",
+    date: "October, 2021 - Present",
+  },
+  {
     title: "Web Developer",
     subtitle: "IoT Lab SEECS, NUST",
     description:
       "Working on a government funded project to detect rust disease in wheat leaves and developing a web portal to visualize the data.",
-    date: "April,2021 - Present",
+    date: "April, 2021 - October, 2021",
   },
   {
     title: "Open-Source Contributor",
