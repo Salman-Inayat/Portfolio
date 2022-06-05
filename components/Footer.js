@@ -49,7 +49,7 @@ function Footer() {
           <Image src="/github.png" alt="github" width={48} height={48} />
         </a>
         <a
-          href="https://linkedin.com/in/salman-inayat-69a634197/"
+          href="https://linkedin.com/in/salman-inayat"
           className={classes.link}
           target="_blank"
           rel="noreferrer"
